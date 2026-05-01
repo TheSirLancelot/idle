@@ -1,4 +1,4 @@
-"""Command-line interface for idle-clans-tools.
+"""Command-line interface for clanlytics.
 
 Examples::
 
@@ -26,7 +26,7 @@ from .api.exceptions import IdleClansAPIError, NetworkError, NotFoundError, Rate
 
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="idle-clans-tools",
+        prog="clanlytics",
         description="CLI tools for the Idle Clans public API.",
     )
     subparsers = parser.add_subparsers(dest="command", metavar="COMMAND")

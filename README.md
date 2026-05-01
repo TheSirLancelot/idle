@@ -1,4 +1,4 @@
-# idle-clans-tools
+# clanlytics
 
 A Python toolkit for interacting with the [Idle Clans](https://idleclans.com/) public API.
 
@@ -6,7 +6,7 @@ A Python toolkit for interacting with the [Idle Clans](https://idleclans.com/) p
 
 ## What is this?
 
-**idle-clans-tools** is a clean, extensible API client and CLI for the
+**clanlytics** is a clean, extensible API client and CLI for the
 [Idle Clans public query API](https://query.idleclans.com/api-docs/index.html).
 It is designed to be a solid foundation that can later power a Discord bot,
 web app, or any other front-end.
@@ -72,30 +72,30 @@ pip install -e .
 
 ## Running the CLI
 
-After installation the `idle-clans` command is available in your PATH.
+After installation the `ic` and `clanlytics` commands are available in your PATH.
 You can also run it with `python -m idle_clans_tools`.
 
 ```bash
 # Look up a player
-idle-clans player YourUsername
+ic player YourUsername
 
 # Look up a clan
-idle-clans clan "Clan Name"
+ic clan "Clan Name"
 
 # Show a clan's member list
-idle-clans clan "Clan Name" --members
+ic clan "Clan Name" --members
 
 # Show the top 10 on the total level leaderboard
-idle-clans leaderboard total_level --top 10
+ic leaderboard total_level --top 10
 
 # Show a specific skill leaderboard (page 2)
-idle-clans leaderboard woodcutting --top 25 --page 2
+ic leaderboard woodcutting --top 25 --page 2
 
 # Show all player-market listings
-idle-clans market
+ic market
 
 # Filter market listings by item name
-idle-clans market "Iron Ore"
+ic market "Iron Ore"
 ```
 
 ---

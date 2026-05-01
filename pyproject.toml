@@ -3,13 +3,13 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "idle-clans-tools"
+name = "clanlytics"
 version = "0.1.0"
-description = "A collection of useful tools for the Idle Clans game using the public API."
+description = "Clanlytics: tools for the Idle Clans game using the public API."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-keywords = ["idle-clans", "gaming", "api", "cli"]
+keywords = ["idle-clans", "gaming", "api", "cli", "clanlytics"]
 dependencies = [
     "requests>=2.28",
 ]
@@ -22,7 +22,8 @@ dev = [
 ]
 
 [project.scripts]
-idle-clans = "idle_clans_tools.cli:main"
+clanlytics = "idle_clans_tools.cli:main"
+ic = "idle_clans_tools.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

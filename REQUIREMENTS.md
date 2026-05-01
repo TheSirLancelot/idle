@@ -1,4 +1,4 @@
-# idle-clans-tools requirements
+# clanlytics requirements
 
 This document captures the current project requirements and development standards.
 Treat it as a living document and update it as scope evolves.
@@ -24,6 +24,7 @@ Build a clean, beginner-friendly Python toolkit for the Idle Clans public API th
 - clan lookup
 - leaderboard lookup
 - market lookup
+- Primary command alias is `ic` (with `clanlytics` as the full command name)
 
 4. Implement basic API error handling for:
 - Missing resources (404)
