@@ -6,15 +6,16 @@ A Python toolkit for interacting with the [Idle Clans](https://idleclans.com/) p
 
 ## What is this?
 
-**clanlytics** is a clean, extensible API client and CLI for the
+**clanlytics** is a clean, extensible Streamlit app, API client, and CLI for the
 [Idle Clans public query API](https://query.idleclans.com/api-docs/index.html).
 It is designed to be a solid foundation that can later power a Discord bot,
-web app, or any other front-end.
+database-backed history, or any other front-end.
 
 ---
 
 ## Current features
 
+- **Streamlit interface** – graphical app with sidebar navigation for all current tools.
 - **Player lookup** – fetch a player's profile, XP, combat level, and skills.
 - **Clan lookup** – fetch clan recruitment info and the full member list.
 - **Leaderboards** – query skill or total-XP leaderboards with pagination.
@@ -31,10 +32,11 @@ web app, or any other front-end.
 
 ## Planned features
 
-- Discord bot commands built on top of this API layer.
-- Caching layer to reduce duplicate API calls.
+- Richer Streamlit views for clan lookup, leaderboards, and market data.
+- Database-backed historical snapshots and trend views.
+- Discord bot commands built on top of the API layer.
 - Richer skill / item models as the API evolves.
-- Web dashboard or REST proxy.
+- REST proxy or other integrations.
 
 ---
 
@@ -70,7 +72,22 @@ pip install -e .
 
 ---
 
+## Running the Streamlit app
+
+Streamlit is the primary user interface for clanlytics.
+
+```bash
+streamlit run idle_clans_tools/app.py
+```
+
+The app includes pages for player lookup, clan lookup, leaderboards, and market
+listings.
+
+---
+
 ## Running the CLI
+
+The CLI remains available as a developer-friendly interface.
 
 After installation the `ic` and `clanlytics` commands are available in your PATH.
 You can also run it with `python -m idle_clans_tools`.
@@ -143,7 +160,10 @@ idle/
 ├── idle_clans_tools/
 │   ├── __init__.py          # Package version
 │   ├── __main__.py          # python -m idle_clans_tools entry point
+│   ├── app.py               # Streamlit app
 │   ├── cli.py               # argparse CLI
+│   ├── ui/                  # Streamlit UI package
+│   │   └── pages/           # One module per Streamlit tab
 │   └── api/
 │       ├── __init__.py      # Public re-exports
 │       ├── client.py        # HTTP client wrapper

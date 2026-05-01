@@ -5,7 +5,9 @@ Treat it as a living document and update it as scope evolves.
 
 ## 1. Product goal
 
-Build a clean, beginner-friendly Python toolkit for the Idle Clans public API that can be reused by future interfaces (CLI, web app, Discord bot).
+Build a clean, beginner-friendly Streamlit app for the Idle Clans public API,
+backed by reusable API client code that can also support future interfaces
+(CLI, database-backed history, Discord bot).
 
 ## 2. Functional requirements
 
@@ -15,18 +17,25 @@ Build a clean, beginner-friendly Python toolkit for the Idle Clans public API th
 - Leaderboard retrieval
 - Market data retrieval
 
-2. Keep API concerns separate from interface concerns.
+2. Provide a Streamlit app as the primary user interface.
+- Sidebar navigation includes player lookup, clan lookup, leaderboards, and market
+- The app performs live API calls only until a database backend is added
+
+3. Keep API concerns separate from interface concerns.
 - API code lives in idle_clans_tools/api
+- Streamlit code lives in idle_clans_tools/app.py
+- Streamlit page/helper modules live in idle_clans_tools/ui
+- Streamlit tab pages live as one module per page in idle_clans_tools/ui/pages
 - CLI code lives in idle_clans_tools/cli.py
 
-3. Expose a CLI with commands for:
+4. Keep the CLI available with commands for:
 - player lookup
 - clan lookup
 - leaderboard lookup
 - market lookup
 - Primary command alias is `ic` (with `clanlytics` as the full command name)
 
-4. Implement basic API error handling for:
+5. Implement basic API error handling for:
 - Missing resources (404)
 - Rate limits (429)
 - Bad/unexpected responses
@@ -38,6 +47,7 @@ Build a clean, beginner-friendly Python toolkit for the Idle Clans public API th
 2. Type hints on public APIs where practical
 3. Readable, extension-friendly naming and structure
 4. Tests must not depend on live network access
+5. Streamlit pages should call the API client directly, not shell out to CLI commands
 
 ## 4. Testing requirements
 
@@ -51,6 +61,8 @@ Build a clean, beginner-friendly Python toolkit for the Idle Clans public API th
 1. Use a local virtual environment at .venv
 2. Install project with dev extras:
 - pip install -e ".[dev]"
+3. Run the primary app with:
+- streamlit run idle_clans_tools/app.py
 
 ## 6. Code quality requirements
 
