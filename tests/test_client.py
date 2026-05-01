@@ -10,11 +10,11 @@ no real network calls are made.  Each test verifies that:
 from __future__ import annotations
 
 import json
+from typing import Any, cast
 from unittest.mock import MagicMock
 
 import pytest
 import requests
-
 from idle_clans_tools.api.client import IdleClansClient
 from idle_clans_tools.api.exceptions import (
     IdleClansAPIError,
@@ -30,7 +30,6 @@ from idle_clans_tools.api.models import (
     PlayerProfile,
 )
 
-
 # ---------------------------------------------------------------------------
 # Helper to build a fake requests.Response
 # ---------------------------------------------------------------------------
@@ -44,6 +43,12 @@ def _make_response(status_code: int, body: object) -> MagicMock:
     response.json.return_value = body
     response.text = json.dumps(body)
     return response
+
+
+def _session_get_mock(client: IdleClansClient) -> MagicMock:
+    """Return the mocked ``Session.get`` with the correct static type for tests."""
+    session = cast(Any, client._session)
+    return cast(MagicMock, session.get)
 
 
 # ---------------------------------------------------------------------------
@@ -72,7 +77,8 @@ class TestGetPlayerProfile:
             "combatLevel": 50,
             "skillExperiences": {"woodcutting": 100_000, "mining": 200_000},
         }
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         profile = client.get_player_profile("HeroPlayer")
 
@@ -84,38 +90,44 @@ class TestGetPlayerProfile:
         assert profile.skills["woodcutting"] == 100_000
 
     def test_calls_correct_url_with_encoding(self, client: IdleClansClient) -> None:
-        client._session.get.return_value = _make_response(200, {"username": "x"})
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, {"username": "x"})
         client.get_player_profile("Test User")
 
-        call_args = client._session.get.call_args
+        call_args = get_mock.call_args
         assert "/api/Player/profile/Test%20User" in call_args[0][0]
 
     def test_raises_not_found(self, client: IdleClansClient) -> None:
-        client._session.get.return_value = _make_response(404, {"error": "not found"})
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(404, {"error": "not found"})
         with pytest.raises(NotFoundError):
             client.get_player_profile("Nobody")
 
     def test_raises_rate_limit(self, client: IdleClansClient) -> None:
-        client._session.get.return_value = _make_response(429, {})
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(429, {})
         with pytest.raises(RateLimitError):
             client.get_player_profile("SpamUser")
 
     def test_raises_api_error_on_5xx(self, client: IdleClansClient) -> None:
-        client._session.get.return_value = _make_response(500, {"error": "server error"})
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(500, {"error": "server error"})
         with pytest.raises(IdleClansAPIError):
             client.get_player_profile("ServerError")
 
     def test_raises_network_error_on_timeout(self, client: IdleClansClient) -> None:
         from requests.exceptions import Timeout
-        client._session.get.side_effect = Timeout()
+
+        get_mock = _session_get_mock(client)
+        get_mock.side_effect = Timeout()
         with pytest.raises(NetworkError):
             client.get_player_profile("TimeoutUser")
 
-    def test_raises_network_error_on_connection_error(
-        self, client: IdleClansClient
-    ) -> None:
+    def test_raises_network_error_on_connection_error(self, client: IdleClansClient) -> None:
         from requests.exceptions import ConnectionError as CE
-        client._session.get.side_effect = CE()
+
+        get_mock = _session_get_mock(client)
+        get_mock.side_effect = CE()
         with pytest.raises(NetworkError):
             client.get_player_profile("OfflineUser")
 
@@ -136,7 +148,8 @@ class TestGetClanInfo:
             "category": "PvE",
             "recruitmentMessage": "We are brave.",
         }
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         info = client.get_clan_info("BraveClan")
 
@@ -149,17 +162,17 @@ class TestGetClanInfo:
         assert info.description == "We are brave."
 
     def test_encodes_clan_name_in_url(self, client: IdleClansClient) -> None:
-        client._session.get.return_value = _make_response(200, {"clanName": "Brave Clan"})
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, {"clanName": "Brave Clan"})
 
         client.get_clan_info("Brave Clan")
 
-        call_args = client._session.get.call_args
+        call_args = get_mock.call_args
         assert "/api/Clan/recruitment/Brave%20Clan" in call_args[0][0]
 
-    def test_raises_not_found_for_missing_clan(
-        self, client: IdleClansClient
-    ) -> None:
-        client._session.get.return_value = _make_response(404, {})
+    def test_raises_not_found_for_missing_clan(self, client: IdleClansClient) -> None:
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(404, {})
         with pytest.raises(NotFoundError):
             client.get_clan_info("NonExistentClan")
 
@@ -172,7 +185,8 @@ class TestGetClanMembers:
                 {"memberName": "Bob", "rank": 1},
             ]
         }
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         members = client.get_clan_members("BraveClan")
 
@@ -183,7 +197,8 @@ class TestGetClanMembers:
 
     def test_returns_empty_members_when_payload_not_dict(self, client: IdleClansClient) -> None:
         payload = []
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         members = client.get_clan_members("BraveClan")
         assert members == []
@@ -200,7 +215,8 @@ class TestGetLeaderboard:
             {"rank": 1, "username": "Top", "value": 999_999},
             {"rank": 2, "username": "Second", "value": 888_888},
         ]
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         entries = client.get_leaderboard("total_level")
 
@@ -210,18 +226,20 @@ class TestGetLeaderboard:
         assert entries[0].username == "Top"
 
     def test_passes_page_params(self, client: IdleClansClient) -> None:
-        client._session.get.return_value = _make_response(200, [])
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, [])
         client.get_leaderboard("mining", page=3, page_size=5)
 
-        call_url = client._session.get.call_args[0][0]
-        call_kwargs = client._session.get.call_args[1]
+        call_url = get_mock.call_args[0][0]
+        call_kwargs = get_mock.call_args[1]
         assert "/api/Leaderboard/top/players%3Adefault/mining" in call_url
         assert call_kwargs["params"]["startCount"] == 11
         assert call_kwargs["params"]["maxCount"] == 5
 
     def test_handles_wrapped_response(self, client: IdleClansClient) -> None:
         payload = {"entries": [{"rank": 1, "name": "Ace", "fields": {"xp": 123}}]}
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         entries = client.get_leaderboard("total_level")
         assert len(entries) == 1
@@ -244,7 +262,8 @@ class TestGetMarketItems:
                 "volume": 100,
             }
         ]
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         items = client.get_market_items()
 
@@ -255,10 +274,11 @@ class TestGetMarketItems:
         assert items[0].quantity == 100
 
     def test_passes_market_price_query_param(self, client: IdleClansClient) -> None:
-        client._session.get.return_value = _make_response(200, [])
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, [])
         client.get_market_items(item_name="Coal")
 
-        call_kwargs = client._session.get.call_args[1]
+        call_kwargs = get_mock.call_args[1]
         assert call_kwargs["params"]["includeAveragePrice"] is True
 
     def test_filters_market_items_client_side(self, client: IdleClansClient) -> None:
@@ -266,7 +286,8 @@ class TestGetMarketItems:
             {"itemId": 1, "itemName": "Coal", "lowestPrice": 25},
             {"itemId": 2, "itemName": "Iron Ore", "lowestPrice": 50},
         ]
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         items = client.get_market_items(item_name="coal")
 
@@ -278,7 +299,8 @@ class TestGetMarketItems:
             "Iron Ore": {"itemId": 2, "lowestPrice": 500, "volume": 10},
             "Coal": {"itemId": 3, "lowestPrice": 20, "volume": 200},
         }
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         items = client.get_market_items()
 
@@ -293,9 +315,10 @@ class TestGetMarketItems:
 
 class TestGetHelper:
     def test_raises_api_error_on_non_json_success(self, client: IdleClansClient) -> None:
+        get_mock = _session_get_mock(client)
         response = _make_response(200, {})
         response.json.side_effect = ValueError("bad json")
-        client._session.get.return_value = response
+        get_mock.return_value = response
 
         with pytest.raises(IdleClansAPIError):
             client.get_player_profile("BadJson")
@@ -305,12 +328,13 @@ class TestGetHelper:
     ) -> None:
         from requests.exceptions import RequestException
 
-        client._session.get.side_effect = RequestException()
+        get_mock = _session_get_mock(client)
+        get_mock.side_effect = RequestException()
 
         with pytest.raises(NetworkError):
             client.get_player_profile("GenericFailure")
 
-        call_kwargs = client._session.get.call_args[1]
+        call_kwargs = get_mock.call_args[1]
         assert call_kwargs["params"] is None
 
     def test_handles_wrapped_response(self, client: IdleClansClient) -> None:
@@ -325,7 +349,8 @@ class TestGetHelper:
                 }
             ]
         }
-        client._session.get.return_value = _make_response(200, payload)
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = _make_response(200, payload)
 
         items = client.get_market_items()
         assert items[0].item_name == "Gold Bar"

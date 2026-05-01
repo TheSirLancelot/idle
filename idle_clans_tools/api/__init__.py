@@ -3,9 +3,9 @@
 from .client import IdleClansClient
 from .exceptions import (
     IdleClansAPIError,
+    NetworkError,
     NotFoundError,
     RateLimitError,
-    NetworkError,
 )
 
 __all__ = [

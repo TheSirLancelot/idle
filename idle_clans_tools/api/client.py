@@ -22,8 +22,7 @@ from urllib.parse import quote
 
 import requests
 from requests.exceptions import ConnectionError as RequestsConnectionError
-from requests.exceptions import RequestException
-from requests.exceptions import Timeout
+from requests.exceptions import RequestException, Timeout
 
 from .exceptions import IdleClansAPIError, NetworkError, NotFoundError, RateLimitError
 from .models import (
@@ -86,9 +85,7 @@ class IdleClansClient:
             raise NetworkError(f"Request failed: {url}") from exc
 
         if response.status_code == 404:
-            raise NotFoundError(
-                f"Resource not found: {url}", status_code=404
-            )
+            raise NotFoundError(f"Resource not found: {url}", status_code=404)
         if response.status_code == 429:
             raise RateLimitError(
                 "Rate limit exceeded. Please slow down requests.",

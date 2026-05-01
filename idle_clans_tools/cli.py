@@ -46,15 +46,10 @@ def _build_parser() -> argparse.ArgumentParser:
     )
 
     # ---- leaderboard -------------------------------------------------------
-    lb_parser = subparsers.add_parser(
-        "leaderboard", help="Show leaderboard rankings."
-    )
+    lb_parser = subparsers.add_parser("leaderboard", help="Show leaderboard rankings.")
     lb_parser.add_argument(
         "category",
-        help=(
-            "Leaderboard stat key (e.g. total_level, attack, mining, "
-            "woodcutting)."
-        ),
+        help=("Leaderboard stat key (e.g. total_level, attack, mining, woodcutting)."),
     )
     lb_parser.add_argument(
         "--top",
@@ -72,9 +67,7 @@ def _build_parser() -> argparse.ArgumentParser:
     )
 
     # ---- market ------------------------------------------------------------
-    market_parser = subparsers.add_parser(
-        "market", help="Query player market listings."
-    )
+    market_parser = subparsers.add_parser("market", help="Query player market listings.")
     market_parser.add_argument(
         "item_name",
         nargs="?",
@@ -132,9 +125,7 @@ def _cmd_clan(client: IdleClansClient, args: argparse.Namespace) -> None:
 
 
 def _cmd_leaderboard(client: IdleClansClient, args: argparse.Namespace) -> None:
-    entries = client.get_leaderboard(
-        args.category, page=args.page, page_size=args.top
-    )
+    entries = client.get_leaderboard(args.category, page=args.page, page_size=args.top)
     if not entries:
         print(f"No leaderboard data found for category '{args.category}'.")
         return
@@ -159,9 +150,7 @@ def _cmd_market(client: IdleClansClient, args: argparse.Namespace) -> None:
     print("-" * 74)
     for item in items:
         seller = item.seller or "(unknown)"
-        print(
-            f"{item.item_name:<30} {item.price:>10,} {item.quantity:>8,} {seller:<24}"
-        )
+        print(f"{item.item_name:<30} {item.price:>10,} {item.quantity:>8,} {seller:<24}")
 
 
 # ---------------------------------------------------------------------------

@@ -11,7 +11,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-
 # ---------------------------------------------------------------------------
 # Player models
 # ---------------------------------------------------------------------------
@@ -28,7 +27,7 @@ class PlayerProfile:
     skills: dict[str, int] = field(default_factory=dict)
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "PlayerProfile":
+    def from_dict(cls, data: dict[str, Any]) -> PlayerProfile:
         # The API currently exposes player skill xp under "skillExperiences".
         raw_skills = data.get("skills") or data.get("skillExperiences") or {}
         if isinstance(raw_skills, dict):
@@ -73,7 +72,7 @@ class ClanInfo:
     tag: str | None = None
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "ClanInfo":
+    def from_dict(cls, data: dict[str, Any]) -> ClanInfo:
         description = data.get("description") or data.get("recruitmentMessage")
         return cls(
             name=data.get("name") or data.get("clanName", ""),
@@ -97,7 +96,7 @@ class ClanMember:
     total_experience: int
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "ClanMember":
+    def from_dict(cls, data: dict[str, Any]) -> ClanMember:
         rank = data.get("rank")
         if rank is None:
             rank = data.get("memberRank", "")
@@ -122,7 +121,7 @@ class LeaderboardEntry:
     value: int
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "LeaderboardEntry":
+    def from_dict(cls, data: dict[str, Any]) -> LeaderboardEntry:
         username = data.get("username") or data.get("name") or data.get("clanName", "")
         value = data.get("value")
         if not isinstance(value, (int, float)):
@@ -159,7 +158,7 @@ class MarketItem:
     seller: str | None
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "MarketItem":
+    def from_dict(cls, data: dict[str, Any]) -> MarketItem:
         price = data.get("price")
         if not isinstance(price, (int, float)):
             price = data.get("lowestPrice")
