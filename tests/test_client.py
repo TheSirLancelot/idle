@@ -10,7 +10,7 @@ no real network calls are made.  Each test verifies that:
 from __future__ import annotations
 
 import json
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
 import pytest
 import requests
@@ -68,10 +68,9 @@ class TestGetPlayerProfile:
     def test_returns_player_profile(self, client: IdleClansClient) -> None:
         payload = {
             "username": "HeroPlayer",
-            "clanName": "BraveClan",
-            "totalExperience": 1_000_000,
+            "guildName": "BraveClan",
             "combatLevel": 50,
-            "skills": {"woodcutting": 100_000, "mining": 200_000},
+            "skillExperiences": {"woodcutting": 100_000, "mining": 200_000},
         }
         client._session.get.return_value = _make_response(200, payload)
 
@@ -80,16 +79,16 @@ class TestGetPlayerProfile:
         assert isinstance(profile, PlayerProfile)
         assert profile.username == "HeroPlayer"
         assert profile.clan_name == "BraveClan"
-        assert profile.total_experience == 1_000_000
+        assert profile.total_experience == 300_000
         assert profile.combat_level == 50
         assert profile.skills["woodcutting"] == 100_000
 
-    def test_calls_correct_url(self, client: IdleClansClient) -> None:
+    def test_calls_correct_url_with_encoding(self, client: IdleClansClient) -> None:
         client._session.get.return_value = _make_response(200, {"username": "x"})
-        client.get_player_profile("TestUser")
+        client.get_player_profile("Test User")
 
         call_args = client._session.get.call_args
-        assert "/api/Player/profile/TestUser" in call_args[0][0]
+        assert "/api/Player/profile/Test%20User" in call_args[0][0]
 
     def test_raises_not_found(self, client: IdleClansClient) -> None:
         client._session.get.return_value = _make_response(404, {"error": "not found"})
@@ -129,11 +128,13 @@ class TestGetPlayerProfile:
 class TestGetClanInfo:
     def test_returns_clan_info(self, client: IdleClansClient) -> None:
         payload = {
-            "name": "BraveClan",
-            "leader": "DragonSlayer",
+            "clanName": "BraveClan",
+            "tag": "BC",
             "memberCount": 12,
-            "totalExperience": 5_000_000,
-            "description": "We are brave.",
+            "isRecruiting": True,
+            "language": "English",
+            "category": "PvE",
+            "recruitmentMessage": "We are brave.",
         }
         client._session.get.return_value = _make_response(200, payload)
 
@@ -141,9 +142,19 @@ class TestGetClanInfo:
 
         assert isinstance(info, ClanInfo)
         assert info.name == "BraveClan"
-        assert info.leader == "DragonSlayer"
+        assert info.tag == "BC"
         assert info.member_count == 12
+        assert info.is_recruiting is True
+        assert info.language == "English"
         assert info.description == "We are brave."
+
+    def test_encodes_clan_name_in_url(self, client: IdleClansClient) -> None:
+        client._session.get.return_value = _make_response(200, {"clanName": "Brave Clan"})
+
+        client.get_clan_info("Brave Clan")
+
+        call_args = client._session.get.call_args
+        assert "/api/Clan/recruitment/Brave%20Clan" in call_args[0][0]
 
     def test_raises_not_found_for_missing_clan(
         self, client: IdleClansClient
@@ -154,11 +165,13 @@ class TestGetClanInfo:
 
 
 class TestGetClanMembers:
-    def test_returns_member_list_from_array(self, client: IdleClansClient) -> None:
-        payload = [
-            {"username": "Alice", "rank": "Leader", "totalExperience": 500_000},
-            {"username": "Bob", "rank": "Member", "totalExperience": 200_000},
-        ]
+    def test_returns_member_list_from_recruitment_memberlist(self, client: IdleClansClient) -> None:
+        payload = {
+            "memberlist": [
+                {"memberName": "Alice", "rank": 3},
+                {"memberName": "Bob", "rank": 1},
+            ]
+        }
         client._session.get.return_value = _make_response(200, payload)
 
         members = client.get_clan_members("BraveClan")
@@ -166,19 +179,14 @@ class TestGetClanMembers:
         assert len(members) == 2
         assert all(isinstance(m, ClanMember) for m in members)
         assert members[0].username == "Alice"
-        assert members[1].rank == "Member"
+        assert members[1].rank == "1"
 
-    def test_returns_member_list_from_dict(self, client: IdleClansClient) -> None:
-        payload = {
-            "members": [
-                {"username": "Carol", "rank": "Officer", "totalExperience": 300_000},
-            ]
-        }
+    def test_returns_empty_members_when_payload_not_dict(self, client: IdleClansClient) -> None:
+        payload = []
         client._session.get.return_value = _make_response(200, payload)
 
         members = client.get_clan_members("BraveClan")
-        assert len(members) == 1
-        assert members[0].username == "Carol"
+        assert members == []
 
 
 # ---------------------------------------------------------------------------
@@ -194,7 +202,7 @@ class TestGetLeaderboard:
         ]
         client._session.get.return_value = _make_response(200, payload)
 
-        entries = client.get_leaderboard("total")
+        entries = client.get_leaderboard("total_level")
 
         assert len(entries) == 2
         assert all(isinstance(e, LeaderboardEntry) for e in entries)
@@ -205,19 +213,20 @@ class TestGetLeaderboard:
         client._session.get.return_value = _make_response(200, [])
         client.get_leaderboard("mining", page=3, page_size=5)
 
+        call_url = client._session.get.call_args[0][0]
         call_kwargs = client._session.get.call_args[1]
-        assert call_kwargs["params"]["page"] == 3
-        assert call_kwargs["params"]["pageSize"] == 5
+        assert "/api/Leaderboard/top/players%3Adefault/mining" in call_url
+        assert call_kwargs["params"]["startCount"] == 11
+        assert call_kwargs["params"]["maxCount"] == 5
 
     def test_handles_wrapped_response(self, client: IdleClansClient) -> None:
-        payload = {
-            "entries": [{"rank": 1, "username": "Ace", "value": 123}]
-        }
+        payload = {"entries": [{"rank": 1, "name": "Ace", "fields": {"xp": 123}}]}
         client._session.get.return_value = _make_response(200, payload)
 
-        entries = client.get_leaderboard("total")
+        entries = client.get_leaderboard("total_level")
         assert len(entries) == 1
         assert entries[0].username == "Ace"
+        assert entries[0].value == 123
 
 
 # ---------------------------------------------------------------------------
@@ -231,9 +240,8 @@ class TestGetMarketItems:
             {
                 "itemId": 1,
                 "itemName": "Iron Ore",
-                "price": 50,
-                "quantity": 100,
-                "seller": "Merchant",
+                "lowestPrice": 50,
+                "volume": 100,
             }
         ]
         client._session.get.return_value = _make_response(200, payload)
@@ -244,17 +252,63 @@ class TestGetMarketItems:
         assert isinstance(items[0], MarketItem)
         assert items[0].item_name == "Iron Ore"
         assert items[0].price == 50
+        assert items[0].quantity == 100
 
-    def test_passes_item_name_filter(self, client: IdleClansClient) -> None:
+    def test_passes_market_price_query_param(self, client: IdleClansClient) -> None:
         client._session.get.return_value = _make_response(200, [])
         client.get_market_items(item_name="Coal")
 
         call_kwargs = client._session.get.call_args[1]
-        assert call_kwargs["params"]["itemName"] == "Coal"
+        assert call_kwargs["params"]["includeAveragePrice"] is True
 
-    def test_no_params_when_no_filter(self, client: IdleClansClient) -> None:
-        client._session.get.return_value = _make_response(200, [])
-        client.get_market_items()
+    def test_filters_market_items_client_side(self, client: IdleClansClient) -> None:
+        payload = [
+            {"itemId": 1, "itemName": "Coal", "lowestPrice": 25},
+            {"itemId": 2, "itemName": "Iron Ore", "lowestPrice": 50},
+        ]
+        client._session.get.return_value = _make_response(200, payload)
+
+        items = client.get_market_items(item_name="coal")
+
+        assert len(items) == 1
+        assert items[0].item_name == "Coal"
+
+    def test_handles_map_response(self, client: IdleClansClient) -> None:
+        payload = {
+            "Iron Ore": {"itemId": 2, "lowestPrice": 500, "volume": 10},
+            "Coal": {"itemId": 3, "lowestPrice": 20, "volume": 200},
+        }
+        client._session.get.return_value = _make_response(200, payload)
+
+        items = client.get_market_items()
+
+        assert len(items) == 2
+        assert any(i.item_name == "Iron Ore" for i in items)
+
+
+# ---------------------------------------------------------------------------
+# _get helper tests
+# ---------------------------------------------------------------------------
+
+
+class TestGetHelper:
+    def test_raises_api_error_on_non_json_success(self, client: IdleClansClient) -> None:
+        response = _make_response(200, {})
+        response.json.side_effect = ValueError("bad json")
+        client._session.get.return_value = response
+
+        with pytest.raises(IdleClansAPIError):
+            client.get_player_profile("BadJson")
+
+    def test_raises_network_error_on_generic_request_exception(
+        self, client: IdleClansClient
+    ) -> None:
+        from requests.exceptions import RequestException
+
+        client._session.get.side_effect = RequestException()
+
+        with pytest.raises(NetworkError):
+            client.get_player_profile("GenericFailure")
 
         call_kwargs = client._session.get.call_args[1]
         assert call_kwargs["params"] is None
@@ -295,6 +349,7 @@ class TestModels:
         info = ClanInfo.from_dict({})
         assert info.leader == ""
         assert info.description is None
+        assert info.is_recruiting is None
 
     def test_leaderboard_entry_defaults(self) -> None:
         entry = LeaderboardEntry.from_dict({})
@@ -305,3 +360,9 @@ class TestModels:
         item = MarketItem.from_dict({})
         assert item.item_id == 0
         assert item.seller is None
+
+    def test_market_item_supports_latest_price_shape(self) -> None:
+        item = MarketItem.from_dict({"itemName": "Coal", "lowestPrice": 123, "volume": 77})
+        assert item.item_name == "Coal"
+        assert item.price == 123
+        assert item.quantity == 77

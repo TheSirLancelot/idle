@@ -18,9 +18,11 @@ The client handles:
 from __future__ import annotations
 
 from typing import Any
+from urllib.parse import quote
 
 import requests
 from requests.exceptions import ConnectionError as RequestsConnectionError
+from requests.exceptions import RequestException
 from requests.exceptions import Timeout
 
 from .exceptions import IdleClansAPIError, NetworkError, NotFoundError, RateLimitError
@@ -80,6 +82,8 @@ class IdleClansClient:
             raise NetworkError(f"Request timed out: {url}") from exc
         except RequestsConnectionError as exc:
             raise NetworkError(f"Connection failed: {url}") from exc
+        except RequestException as exc:
+            raise NetworkError(f"Request failed: {url}") from exc
 
         if response.status_code == 404:
             raise NotFoundError(
@@ -96,7 +100,12 @@ class IdleClansClient:
                 status_code=response.status_code,
             )
 
-        return response.json()
+        try:
+            return response.json()
+        except ValueError as exc:
+            raise IdleClansAPIError(
+                "API returned a non-JSON response.", status_code=response.status_code
+            ) from exc
 
     # ------------------------------------------------------------------
     # Player endpoints
@@ -111,7 +120,8 @@ class IdleClansClient:
         Returns:
             A :class:`~idle_clans_tools.api.models.PlayerProfile` instance.
         """
-        data = self._get(f"/api/Player/profile/{username}")
+        safe_username = quote(username, safe="")
+        data = self._get(f"/api/Player/profile/{safe_username}")
         return PlayerProfile.from_dict(data)
 
     # ------------------------------------------------------------------
@@ -127,7 +137,8 @@ class IdleClansClient:
         Returns:
             A :class:`~idle_clans_tools.api.models.ClanInfo` instance.
         """
-        data = self._get(f"/api/Clan/info/{clan_name}")
+        safe_clan_name = quote(clan_name, safe="")
+        data = self._get(f"/api/Clan/recruitment/{safe_clan_name}")
         return ClanInfo.from_dict(data)
 
     def get_clan_members(self, clan_name: str) -> list[ClanMember]:
@@ -139,9 +150,11 @@ class IdleClansClient:
         Returns:
             A list of :class:`~idle_clans_tools.api.models.ClanMember` objects.
         """
-        data = self._get(f"/api/Clan/members/{clan_name}")
-        if not isinstance(data, list):
-            data = data.get("members", [])
+        safe_clan_name = quote(clan_name, safe="")
+        data = self._get(f"/api/Clan/recruitment/{safe_clan_name}")
+        if not isinstance(data, dict):
+            return []
+        data = data.get("memberlist", [])
         return [ClanMember.from_dict(entry) for entry in data]
 
     # ------------------------------------------------------------------
@@ -149,7 +162,11 @@ class IdleClansClient:
     # ------------------------------------------------------------------
 
     def get_leaderboard(
-        self, category: str, page: int = 1, page_size: int = 25
+        self,
+        category: str,
+        page: int = 1,
+        page_size: int = 25,
+        leaderboard_name: str = "players:default",
     ) -> list[LeaderboardEntry]:
         """Fetch a leaderboard for the given category.
 
@@ -165,11 +182,15 @@ class IdleClansClient:
             A list of :class:`~idle_clans_tools.api.models.LeaderboardEntry`
             objects sorted by rank.
         """
+        start_count = max(1, ((page - 1) * page_size) + 1)
+        safe_leaderboard_name = quote(leaderboard_name, safe="")
+        safe_category = quote(category, safe="")
         data = self._get(
-            f"/api/Leaderboards/{category}",
-            params={"page": page, "pageSize": page_size},
+            f"/api/Leaderboard/top/{safe_leaderboard_name}/{safe_category}",
+            params={"startCount": start_count, "maxCount": page_size},
         )
-        if not isinstance(data, list):
+        if isinstance(data, dict):
+            # Some deployments wrap list payloads under an "entries" key.
             data = data.get("entries", [])
         return [LeaderboardEntry.from_dict(entry) for entry in data]
 
@@ -187,11 +208,30 @@ class IdleClansClient:
         Returns:
             A list of :class:`~idle_clans_tools.api.models.MarketItem` objects.
         """
-        params: dict[str, Any] = {}
-        if item_name:
-            params["itemName"] = item_name
+        data = self._get(
+            "/api/PlayerMarket/items/prices/latest",
+            params={"includeAveragePrice": True},
+        )
 
-        data = self._get("/api/PlayerMarket/items", params=params or None)
-        if not isinstance(data, list):
-            data = data.get("items", [])
-        return [MarketItem.from_dict(entry) for entry in data]
+        # The market endpoint can return either a list or a map keyed by item id/name.
+        entries: list[dict[str, Any]] = []
+        if isinstance(data, list):
+            entries = [entry for entry in data if isinstance(entry, dict)]
+        elif isinstance(data, dict):
+            raw_items = data.get("items") if isinstance(data.get("items"), list) else None
+            if raw_items is not None:
+                entries = [entry for entry in raw_items if isinstance(entry, dict)]
+            else:
+                for key, value in data.items():
+                    if isinstance(value, dict):
+                        hydrated = dict(value)
+                        if "itemName" not in hydrated and isinstance(key, str):
+                            hydrated["itemName"] = key
+                        entries.append(hydrated)
+
+        items = [MarketItem.from_dict(entry) for entry in entries]
+        if not item_name:
+            return items
+
+        needle = item_name.casefold()
+        return [item for item in items if needle in item.item_name.casefold()]

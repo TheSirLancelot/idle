@@ -52,8 +52,8 @@ def _build_parser() -> argparse.ArgumentParser:
     lb_parser.add_argument(
         "category",
         help=(
-            "Leaderboard category (e.g. total, combat, woodcutting, mining, "
-            "fishing, cooking, …)."
+            "Leaderboard stat key (e.g. total_level, attack, mining, "
+            "woodcutting)."
         ),
     )
     lb_parser.add_argument(
@@ -93,7 +93,7 @@ def _build_parser() -> argparse.ArgumentParser:
 def _cmd_player(client: IdleClansClient, args: argparse.Namespace) -> None:
     profile = client.get_player_profile(args.username)
     print(f"Player:           {profile.username}")
-    print(f"Clan:             {profile.clan_name or '(none)'}")
+    print(f"Guild/Clan:       {profile.clan_name or '(none)'}")
     print(f"Combat level:     {profile.combat_level}")
     print(f"Total experience: {profile.total_experience:,}")
     if profile.skills:
@@ -105,11 +105,21 @@ def _cmd_player(client: IdleClansClient, args: argparse.Namespace) -> None:
 def _cmd_clan(client: IdleClansClient, args: argparse.Namespace) -> None:
     info = client.get_clan_info(args.clan_name)
     print(f"Clan:             {info.name}")
-    print(f"Leader:           {info.leader}")
+    if info.tag:
+        print(f"Tag:              {info.tag}")
+    if info.leader:
+        print(f"Leader:           {info.leader}")
     print(f"Members:          {info.member_count}")
-    print(f"Total experience: {info.total_experience:,}")
+    if info.is_recruiting is not None:
+        print(f"Recruiting:       {'yes' if info.is_recruiting else 'no'}")
+    if info.language:
+        print(f"Language:         {info.language}")
+    if info.category:
+        print(f"Category:         {info.category}")
+    if info.total_experience:
+        print(f"Total experience: {info.total_experience:,}")
     if info.description:
-        print(f"Description:      {info.description}")
+        print(f"Message:          {info.description}")
 
     if args.members:
         members = client.get_clan_members(args.clan_name)

@@ -16,8 +16,7 @@ web app, or any other front-end.
 ## Current features
 
 - **Player lookup** – fetch a player's profile, XP, combat level, and skills.
-- **Clan lookup** – fetch clan info (leader, member count, total XP) and the
-  full member list.
+- **Clan lookup** – fetch clan recruitment info and the full member list.
 - **Leaderboards** – query skill or total-XP leaderboards with pagination.
 - **Market** – list current player-market listings, optionally filtered by
   item name.
@@ -75,8 +74,8 @@ idle-clans clan "Clan Name"
 # Show a clan's member list
 idle-clans clan "Clan Name" --members
 
-# Show the top 10 on the total-XP leaderboard
-idle-clans leaderboard total --top 10
+# Show the top 10 on the total level leaderboard
+idle-clans leaderboard total_level --top 10
 
 # Show a specific skill leaderboard (page 2)
 idle-clans leaderboard woodcutting --top 25 --page 2
@@ -135,11 +134,11 @@ The base URL used by this client is `https://query.idleclans.com`.
 
 | Feature | Endpoint used |
 |---|---|
-| Player profile | `GET /api/Player/profile/{username}` |
-| Clan info | `GET /api/Clan/info/{clanName}` |
-| Clan members | `GET /api/Clan/members/{clanName}` |
-| Leaderboard | `GET /api/Leaderboards/{category}` |
-| Market items | `GET /api/PlayerMarket/items` |
+| Player profile | `GET /api/Player/profile/{name}` |
+| Clan recruitment info | `GET /api/Clan/recruitment/{clanName}` |
+| Clan members | `GET /api/Clan/recruitment/{clanName}` (memberlist) |
+| Leaderboard | `GET /api/Leaderboard/top/{leaderboardName}/{name}` |
+| Market price snapshot | `GET /api/PlayerMarket/items/prices/latest` |
 
 ---
 
