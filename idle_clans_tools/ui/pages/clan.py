@@ -12,6 +12,11 @@ from idle_clans_tools.ui.errors import render_api_error
 from idle_clans_tools.ui.formatting import format_bool, format_number
 
 
+def _open_player_lookup(username: str) -> None:
+    st.session_state.pending_player_lookup_username = username
+    st.session_state.pending_page = "Player Lookup"
+
+
 def render_clan_lookup(client: IdleClansClient) -> None:
     st.header("Clan Lookup")
 
@@ -56,15 +61,22 @@ def render_clan_lookup(client: IdleClansClient) -> None:
     if include_members:
         st.subheader("Members")
         if members:
-            member_rows = [
-                {
-                    "Rank": member.rank,
-                    "Username": member.username,
-                    "Total XP": member.total_experience,
-                }
-                for member in members
-            ]
-            st.dataframe(member_rows, hide_index=True, use_container_width=True)
+            header_columns = st.columns([2, 4, 2])
+            header_columns[0].write("**Rank**")
+            header_columns[1].write("**Username**")
+            header_columns[2].write("**Total XP**")
+
+            for index, member in enumerate(members):
+                row_columns = st.columns([2, 4, 2])
+                row_columns[0].write(member.rank)
+                row_columns[1].button(
+                    member.username,
+                    key=f"clan-member-{index}-{member.username}",
+                    on_click=_open_player_lookup,
+                    args=(member.username,),
+                    type="tertiary",
+                )
+                row_columns[2].write(format_number(member.total_experience))
         else:
             st.info("No members were returned for this clan.")
 

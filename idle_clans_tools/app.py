@@ -12,6 +12,8 @@ from idle_clans_tools.ui.pages import (
     render_player_lookup,
 )
 
+PAGES = ["Player Lookup", "Clan Lookup", "Leaderboards", "Market"]
+
 
 def main() -> None:
     st.set_page_config(page_title="clanlytics", page_icon="CL", layout="wide")
@@ -21,9 +23,13 @@ def main() -> None:
 
     client = IdleClansClient()
 
+    if pending_page := st.session_state.pop("pending_page", None):
+        st.session_state.navigation_page = pending_page
+
     selected_page = st.sidebar.radio(
         "Navigation",
-        ["Player Lookup", "Clan Lookup", "Leaderboards", "Market"],
+        PAGES,
+        key="navigation_page",
     )
 
     if selected_page == "Player Lookup":
