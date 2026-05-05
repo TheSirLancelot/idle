@@ -29,6 +29,7 @@ from idle_clans_tools.api.models import (
     GameItem,
     LeaderboardEntry,
     MarketItem,
+    PlayerActivity,
     PlayerProfile,
 )
 
@@ -454,6 +455,18 @@ class TestGetHelper:
 
 
 class TestModels:
+    def test_player_activity_task_type_18_is_invocation(self) -> None:
+        activity = PlayerActivity.from_dict({"type": 2, "taskType": 18, "activityIdentifierId": 3})
+        assert activity.skill_label == "Invocation"
+
+    def test_player_activity_type_0_is_offline(self) -> None:
+        activity = PlayerActivity.from_dict({"type": 0, "taskType": 0, "activityIdentifierId": 0})
+        assert activity.skill_label == "Offline"
+
+    def test_player_activity_type_1_task_type_0_is_clan_event(self) -> None:
+        activity = PlayerActivity.from_dict({"type": 1, "taskType": 0, "activityIdentifierId": 0})
+        assert activity.skill_label == "In Clan Event"
+
     def test_level_for_experience_uses_idle_clans_thresholds(self) -> None:
         assert level_for_experience(0) == 1
         assert level_for_experience(74) == 1

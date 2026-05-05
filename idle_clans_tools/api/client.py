@@ -35,6 +35,7 @@ from .models import (
     GameItem,
     LeaderboardEntry,
     MarketItem,
+    PlayerActivity,
     PlayerProfile,
 )
 
@@ -177,6 +178,70 @@ class IdleClansClient:
         safe_username = quote(username, safe="")
         data = self._get(f"/api/Player/profile/{safe_username}")
         return PlayerProfile.from_dict(data)
+
+    def get_player_activities(self, usernames: list[str]) -> dict[str, PlayerActivity]:
+        """Fetch the current activity for a batch of players.
+
+        Args:
+            usernames: List of player usernames to query.  The API accepts up
+                to ~100 usernames per request.
+
+        Returns:
+            A ``dict`` mapping each username to its
+            :class:`~idle_clans_tools.api.models.PlayerActivity`.
+        """
+        if not usernames:
+            return {}
+        params = [("usernames", u) for u in usernames]
+        data = self._get("/api/Player/activities", params=params)
+        if not isinstance(data, dict):
+            return {}
+        return {
+            str(name): PlayerActivity.from_dict(activity)
+            for name, activity in data.items()
+            if isinstance(activity, dict)
+        }
+
+    def get_player_simple_profiles(self, usernames: list[str]) -> dict[str, PlayerProfile]:
+        """Fetch simple profiles for a batch of players.
+
+        The simple profile payload contains the same fields used by
+        idle-clans-hub for activity indicators (for example
+        ``taskTypeOnLogout`` and ``taskNameOnLogout``).
+        """
+        profiles: dict[str, PlayerProfile] = {}
+        for username in usernames:
+            safe_username = quote(username, safe="")
+            try:
+                data = self._get(f"/api/Player/profile/simple/{safe_username}")
+            except NotFoundError:
+                continue
+            if not isinstance(data, dict):
+                continue
+            profiles[username] = PlayerProfile.from_dict(data)
+        return profiles
+
+    def get_player_activity_details(
+        self,
+        activities: dict[str, PlayerActivity],
+    ) -> dict[str, str]:
+        """Resolve a readable task name for each player's activity.
+
+        This follows the same source used by idle-clans-hub:
+        ``/api/Player/profile/simple/{username}`` -> ``taskNameOnLogout``.
+        """
+        if not activities:
+            return {}
+
+        profiles = self.get_player_simple_profiles(list(activities))
+        details: dict[str, str] = {}
+
+        for username, profile in profiles.items():
+            task_name = profile.task_name_on_logout
+            if isinstance(task_name, str) and task_name.strip():
+                details[username] = task_name.strip()
+
+        return details
 
     # ------------------------------------------------------------------
     # Clan endpoints
