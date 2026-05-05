@@ -28,6 +28,9 @@ dev = [
 clanlytics = "idle_clans_tools.cli:main"
 ic = "idle_clans_tools.cli:main"
 
+[tool.poetry]
+packages = [{ include = "idle_clans_tools" }]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
