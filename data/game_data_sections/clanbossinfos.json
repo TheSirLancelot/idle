@@ -1,0 +1,520 @@
+[
+  {
+    "AmountOfTargetsToAttack": 20,
+    "AttackStyleWeakness": 4,
+    "BossNameLocalizationKey": "malignant_spider",
+    "BossType": 3,
+    "DescriptionLocalizationKey": "malignant_spider_description",
+    "EnemyAccuracyBonus": 68,
+    "EnemyArcheryAccuracyBonus": 67,
+    "EnemyArcheryDefenceBonus": 74,
+    "EnemyArcheryLevel": 1,
+    "EnemyArcheryStrengthBonus": 71,
+    "EnemyAttackInterval": 2000,
+    "EnemyDefenceBonus": 74,
+    "EnemyDefenceLevel": 70,
+    "EnemyHealth": 1000,
+    "EnemyMagicAccuracyBonus": 73,
+    "EnemyMagicDefenceBonus": 74,
+    "EnemyMagicLevel": 1,
+    "EnemyMagicStrengthBonus": 74,
+    "EnemyRespawnTime": 0,
+    "EnemyRigourLevel": 85,
+    "EnemyStrengthBonus": 72,
+    "EnemyStrengthLevel": 63,
+    "GroupIronmanModeModifier": 1,
+    "IronmanModeModifier": 2,
+    "LongDescriptionLocalizationKey": "malignant_spider_description_long",
+    "LootTable": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 0,
+        "ItemAmountMin": 0,
+        "ItemId": 814,
+        "LevelRequirement": 0,
+        "Weight": 0.20000000298023224
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 0,
+        "ItemAmountMin": 0,
+        "ItemId": 815,
+        "LevelRequirement": 0,
+        "Weight": 0.05000000074505806
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 1500,
+        "ItemAmountMin": 500,
+        "ItemId": 19,
+        "LevelRequirement": 0,
+        "Weight": 19.75
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 8,
+        "ItemAmountMin": 4,
+        "ItemId": 819,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 2,
+        "ItemAmountMin": 1,
+        "ItemId": 820,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 8,
+        "ItemAmountMin": 4,
+        "ItemId": 821,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 2,
+        "ItemAmountMin": 1,
+        "ItemId": 822,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 8,
+        "ItemAmountMin": 4,
+        "ItemId": 823,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 2,
+        "ItemAmountMin": 1,
+        "ItemId": 824,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 8,
+        "ItemAmountMin": 4,
+        "ItemId": 825,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 2,
+        "ItemAmountMin": 1,
+        "ItemId": 826,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      }
+    ],
+    "ModifierOptions": [
+      {
+        "Modifier": 1,
+        "ModifierEntries": [
+          {
+            "CreditCost": 250,
+            "ModifierAmount": 4500,
+            "Tier": 1
+          },
+          {
+            "CreditCost": 500,
+            "ModifierAmount": 4000,
+            "Tier": 2
+          }
+        ]
+      },
+      {
+        "Modifier": 2,
+        "ModifierEntries": [
+          {
+            "CreditCost": 1250,
+            "ModifierAmount": 4,
+            "Tier": 1
+          },
+          {
+            "CreditCost": 2500,
+            "ModifierAmount": 5,
+            "Tier": 2
+          }
+        ]
+      }
+    ],
+    "PlayerBaseAttackSpeedMs": 5000,
+    "PvmStatRequirements": [],
+    "PvmStatType": 10,
+    "UsedAttackStyle": 3,
+    "_id": "68492c01d917db1423066294"
+  },
+  {
+    "AmountOfTargetsToAttack": 20,
+    "AttackStyleWeakness": 6,
+    "BossNameLocalizationKey": "skeleton_warrior",
+    "BossType": 2,
+    "DescriptionLocalizationKey": "skeleton_warrior_description",
+    "EnemyAccuracyBonus": 85,
+    "EnemyArcheryAccuracyBonus": 90,
+    "EnemyArcheryDefenceBonus": 125,
+    "EnemyArcheryLevel": 1,
+    "EnemyArcheryStrengthBonus": 90,
+    "EnemyAttackInterval": 2000,
+    "EnemyDefenceBonus": 125,
+    "EnemyDefenceLevel": 110,
+    "EnemyHealth": 5000,
+    "EnemyMagicAccuracyBonus": 90,
+    "EnemyMagicDefenceBonus": 125,
+    "EnemyMagicLevel": 1,
+    "EnemyMagicStrengthBonus": 90,
+    "EnemyRespawnTime": 0,
+    "EnemyRigourLevel": 155,
+    "EnemyStrengthBonus": 95,
+    "EnemyStrengthLevel": 85,
+    "GroupIronmanModeModifier": 1,
+    "IronmanModeModifier": 2,
+    "LongDescriptionLocalizationKey": "skeleton_warrior_description_long",
+    "LootTable": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 4000,
+        "ItemAmountMin": 2000,
+        "ItemId": 19,
+        "LevelRequirement": 0,
+        "Weight": 9.350000381469727
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 0,
+        "ItemAmountMin": 0,
+        "ItemId": 812,
+        "LevelRequirement": 0,
+        "Weight": 0.10000000149011612
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 0,
+        "ItemAmountMin": 0,
+        "ItemId": 813,
+        "LevelRequirement": 0,
+        "Weight": 0.4000000059604645
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 0,
+        "ItemAmountMin": 0,
+        "ItemId": 816,
+        "LevelRequirement": 0,
+        "Weight": 0.05000000074505806
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 30,
+        "ItemAmountMin": 15,
+        "ItemId": 138,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 10,
+        "ItemId": 23,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 10,
+        "ItemId": 24,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 10,
+        "ItemId": 25,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 10,
+        "ItemId": 22,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 10,
+        "ItemId": 26,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 10,
+        "ItemAmountMin": 5,
+        "ItemId": 27,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 120,
+        "ItemAmountMin": 100,
+        "ItemId": 818,
+        "LevelRequirement": 0,
+        "Weight": 20.0
+      }
+    ],
+    "ModifierOptions": [
+      {
+        "Modifier": 1,
+        "ModifierEntries": [
+          {
+            "CreditCost": 250,
+            "ModifierAmount": 4500,
+            "Tier": 1
+          },
+          {
+            "CreditCost": 500,
+            "ModifierAmount": 4000,
+            "Tier": 2
+          }
+        ]
+      },
+      {
+        "Modifier": 2,
+        "ModifierEntries": [
+          {
+            "CreditCost": 2500,
+            "ModifierAmount": 4,
+            "Tier": 1
+          },
+          {
+            "CreditCost": 5000,
+            "ModifierAmount": 5,
+            "Tier": 2
+          }
+        ]
+      }
+    ],
+    "PlayerBaseAttackSpeedMs": 5000,
+    "PvmStatRequirements": [
+      {
+        "Requirement": 25,
+        "StatType": 1
+      },
+      {
+        "Requirement": 25,
+        "StatType": 2
+      },
+      {
+        "Requirement": 25,
+        "StatType": 3
+      },
+      {
+        "Requirement": 25,
+        "StatType": 4
+      },
+      {
+        "Requirement": 25,
+        "StatType": 5
+      },
+      {
+        "Requirement": 25,
+        "StatType": 6
+      }
+    ],
+    "PvmStatType": 11,
+    "UsedAttackStyle": 2,
+    "_id": "68492c01d917db1423066296"
+  },
+  {
+    "AmountOfTargetsToAttack": 20,
+    "AttackStyleWeakness": 1,
+    "BossNameLocalizationKey": "otherworldly_golem",
+    "BossType": 1,
+    "DescriptionLocalizationKey": "otherworldly_golem_description",
+    "EnemyAccuracyBonus": 225,
+    "EnemyArcheryAccuracyBonus": 225,
+    "EnemyArcheryDefenceBonus": 250,
+    "EnemyArcheryLevel": 1,
+    "EnemyArcheryStrengthBonus": 125,
+    "EnemyAttackInterval": 2500,
+    "EnemyDefenceBonus": 250,
+    "EnemyDefenceLevel": 250,
+    "EnemyHealth": 25000,
+    "EnemyMagicAccuracyBonus": 225,
+    "EnemyMagicDefenceBonus": 250,
+    "EnemyMagicLevel": 1,
+    "EnemyMagicStrengthBonus": 125,
+    "EnemyRespawnTime": 0,
+    "EnemyRigourLevel": 275,
+    "EnemyStrengthBonus": 117,
+    "EnemyStrengthLevel": 117,
+    "GroupIronmanModeModifier": 2,
+    "IronmanModeModifier": 10,
+    "LongDescriptionLocalizationKey": "otherworldly_golem_description_long",
+    "LootTable": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20000,
+        "ItemAmountMin": 10000,
+        "ItemId": 19,
+        "LevelRequirement": 0,
+        "Weight": 39.45000076293945
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 0,
+        "ItemAmountMin": 0,
+        "ItemId": 787,
+        "LevelRequirement": 0,
+        "Weight": 0.5
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 100,
+        "ItemAmountMin": 25,
+        "ItemId": 31,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 100,
+        "ItemAmountMin": 25,
+        "ItemId": 32,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 100,
+        "ItemAmountMin": 25,
+        "ItemId": 33,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 100,
+        "ItemAmountMin": 25,
+        "ItemId": 39,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 100,
+        "ItemAmountMin": 25,
+        "ItemId": 41,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 50,
+        "ItemAmountMin": 20,
+        "ItemId": 42,
+        "LevelRequirement": 0,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 0,
+        "ItemAmountMin": 0,
+        "ItemId": 817,
+        "LevelRequirement": 0,
+        "Weight": 0.05000000074505806
+      }
+    ],
+    "ModifierOptions": [
+      {
+        "Modifier": 1,
+        "ModifierEntries": [
+          {
+            "CreditCost": 1000,
+            "ModifierAmount": 4750,
+            "Tier": 1
+          },
+          {
+            "CreditCost": 2000,
+            "ModifierAmount": 4500,
+            "Tier": 2
+          },
+          {
+            "CreditCost": 3000,
+            "ModifierAmount": 4250,
+            "Tier": 3
+          },
+          {
+            "CreditCost": 4000,
+            "ModifierAmount": 4000,
+            "Tier": 4
+          }
+        ]
+      },
+      {
+        "Modifier": 2,
+        "ModifierEntries": [
+          {
+            "CreditCost": 10000,
+            "ModifierAmount": 4,
+            "Tier": 1
+          },
+          {
+            "CreditCost": 20000,
+            "ModifierAmount": 5,
+            "Tier": 2
+          }
+        ]
+      }
+    ],
+    "PlayerBaseAttackSpeedMs": 5000,
+    "PvmStatRequirements": [
+      {
+        "Requirement": 2500,
+        "StatType": 1
+      },
+      {
+        "Requirement": 2500,
+        "StatType": 2
+      },
+      {
+        "Requirement": 2500,
+        "StatType": 3
+      },
+      {
+        "Requirement": 2500,
+        "StatType": 4
+      },
+      {
+        "Requirement": 2500,
+        "StatType": 5
+      },
+      {
+        "Requirement": 2500,
+        "StatType": 6
+      },
+      {
+        "Requirement": 250,
+        "StatType": 7
+      }
+    ],
+    "PvmStatType": 12,
+    "UsedAttackStyle": 4,
+    "_id": "68492c01d917db1423066295"
+  }
+]

@@ -66,6 +66,7 @@ class IdleClansClient:
         self.timeout = timeout
         self._session = session or requests.Session()
         self._session.headers.update({"Accept": "application/json"})
+        self._game_data_cache: dict[str, Any] | None = None
         self._item_lookup_cache: dict[int, GameItem] | None = None
         self._clan_upgrade_lookup_cache: dict[int, str] | None = None
 
@@ -114,6 +115,9 @@ class IdleClansClient:
 
     def _get_game_data(self) -> dict[str, Any]:
         """Fetch game-data, normalizing Mongo-style ObjectId tokens."""
+        if self._game_data_cache is not None:
+            return dict(self._game_data_cache)
+
         url = f"{self.base_url}/api/Configuration/game-data"
         try:
             response = self._session.get(url, params=None, timeout=self.timeout)
@@ -160,7 +164,34 @@ class IdleClansClient:
                 "Game-data endpoint returned an unexpected payload.",
                 status_code=response.status_code,
             )
-        return data
+
+        self._game_data_cache = data
+        return dict(data)
+
+    def get_game_data(self) -> dict[str, Any]:
+        """Fetch and return the full game-data payload."""
+        return self._get_game_data()
+
+    def list_game_data_sections(self) -> list[str]:
+        """Return sorted top-level keys from the game-data payload."""
+        return sorted(self._get_game_data().keys(), key=str.casefold)
+
+    def get_game_data_section(self, section: str) -> Any:
+        """Return a single top-level section from game-data.
+
+        Args:
+            section: The top-level game-data key (for example ``"Items"``).
+
+        Returns:
+            The payload for the requested section.
+
+        Raises:
+            NotFoundError: If the section does not exist in the payload.
+        """
+        data = self._get_game_data()
+        if section not in data:
+            raise NotFoundError(f"Game-data section not found: {section}", status_code=404)
+        return data[section]
 
     # ------------------------------------------------------------------
     # Player endpoints

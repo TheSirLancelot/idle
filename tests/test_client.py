@@ -400,6 +400,49 @@ class TestGetGameItems:
         assert items[0].display_name == "Ghostly Hood"
 
 
+class TestGameDataSections:
+    def test_list_game_data_sections_returns_sorted_keys(self, client: IdleClansClient) -> None:
+        payload = '{ "ClanUpgrades": { "Items": [] }, "Items": { "Items": [] }, "Tasks": [] }'
+        response = MagicMock(spec=requests.Response)
+        response.status_code = 200
+        response.ok = True
+        response.text = payload
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = response
+
+        sections = client.list_game_data_sections()
+
+        assert sections == ["ClanUpgrades", "Items", "Tasks"]
+
+    def test_get_game_data_section_returns_requested_section(self, client: IdleClansClient) -> None:
+        payload = '{ "Items": { "Items": [{"ItemId": 1, "Name": "logs"}] }, "Tasks": [] }'
+        response = MagicMock(spec=requests.Response)
+        response.status_code = 200
+        response.ok = True
+        response.text = payload
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = response
+
+        items_section = client.get_game_data_section("Items")
+
+        assert isinstance(items_section, dict)
+        assert "Items" in items_section
+
+    def test_get_game_data_section_raises_not_found_for_missing_key(
+        self, client: IdleClansClient
+    ) -> None:
+        payload = '{ "Items": { "Items": [] } }'
+        response = MagicMock(spec=requests.Response)
+        response.status_code = 200
+        response.ok = True
+        response.text = payload
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = response
+
+        with pytest.raises(NotFoundError):
+            client.get_game_data_section("Missing")
+
+
 # ---------------------------------------------------------------------------
 # _get helper tests
 # ---------------------------------------------------------------------------

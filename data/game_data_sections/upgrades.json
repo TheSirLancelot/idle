@@ -1,0 +1,1313 @@
+{
+  "Items": [
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        100000,
+        500000,
+        2500000,
+        10000000,
+        25000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            30,
+            50,
+            70,
+            80,
+            90
+          ],
+          "Skill": 9
+        },
+        {
+          "Requirements": [
+            20,
+            40,
+            60,
+            70,
+            80
+          ],
+          "Skill": 13
+        }
+      ],
+      "TierDescriptionLocKeys": [
+        "cardboard_box_description",
+        "tent_description",
+        "van_down_by_the_river_description",
+        "small_cabin_description",
+        "house_description"
+      ],
+      "TierNameLocKeys": [
+        "cardboard_box",
+        "tent",
+        "van_down_by_the_river",
+        "small_cabin",
+        "house"
+      ],
+      "TierUnlocks": [
+        5,
+        10,
+        15,
+        20,
+        25
+      ],
+      "Tiers": 5,
+      "Type": 0
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": true,
+      "ClanCreditCost": 0,
+      "Costs": [
+        5000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "Tiers": 0,
+      "Type": 1
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        100000,
+        250000,
+        1000000,
+        5000000,
+        20000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        20,
+        40,
+        60,
+        80,
+        100
+      ],
+      "Tiers": 5,
+      "Type": 2
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        100000,
+        250000,
+        1000000,
+        5000000,
+        20000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        20,
+        40,
+        60,
+        80,
+        100
+      ],
+      "Tiers": 5,
+      "Type": 3
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        100000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "Tiers": 1,
+      "Type": 4
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        250000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "Tiers": 1,
+      "Type": 5
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        200000,
+        1000000,
+        3000000,
+        5000000,
+        10000000,
+        25000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "Tiers": 6,
+      "Type": 6
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        50000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "Tiers": 1,
+      "Type": 7
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        250000,
+        1000000,
+        3000000,
+        10000000,
+        25000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        10,
+        20,
+        30,
+        40,
+        50
+      ],
+      "Tiers": 5,
+      "Type": 8
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        200000,
+        600000,
+        1500000,
+        5000000,
+        10000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        10,
+        20,
+        30,
+        40,
+        50
+      ],
+      "Tiers": 5,
+      "Type": 9
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        750000,
+        2500000,
+        10000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        10,
+        20,
+        30
+      ],
+      "Tiers": 3,
+      "Type": 10
+    },
+    {
+      "BenefitsCanBeToggledOff": true,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        1000000,
+        2000000,
+        4000000,
+        7500000,
+        10000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        10,
+        20,
+        30,
+        40,
+        50
+      ],
+      "Tiers": 5,
+      "Type": 11
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        500000,
+        1000000,
+        2000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        30,
+        60,
+        100
+      ],
+      "Tiers": 3,
+      "Type": 12
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        150000,
+        750000,
+        2500000,
+        7500000,
+        20000000,
+        50000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        15,
+        30,
+        45,
+        60,
+        75,
+        90
+      ],
+      "Tiers": 6,
+      "Type": 13
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        500000,
+        1500000,
+        5000000,
+        10000000
+      ],
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": true,
+      "IsClanUpgrade": false,
+      "ItemCosts": [],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "Tiers": 4,
+      "Type": 14
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        50000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        20
+      ],
+      "Tiers": 1,
+      "Type": 15
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        75000
+      ],
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": true,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        8
+      ],
+      "Tiers": 1,
+      "Type": 24
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        25000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "Tiers": 1,
+      "Type": 25
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        500000,
+        1000000,
+        2000000,
+        3000000,
+        4000000,
+        5000000,
+        10000000
+      ],
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            0,
+            0,
+            70,
+            0,
+            0,
+            0,
+            0
+          ],
+          "Skill": 11
+        },
+        {
+          "Requirements": [
+            0,
+            0,
+            70,
+            0,
+            0,
+            0,
+            0
+          ],
+          "Skill": 7
+        },
+        {
+          "Requirements": [
+            70,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "Skill": 10
+        },
+        {
+          "Requirements": [
+            0,
+            70,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "Skill": 13
+        },
+        {
+          "Requirements": [
+            70,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "Skill": 8
+        },
+        {
+          "Requirements": [
+            0,
+            0,
+            0,
+            70,
+            0,
+            0,
+            0
+          ],
+          "Skill": 16
+        },
+        {
+          "Requirements": [
+            0,
+            0,
+            0,
+            70,
+            0,
+            0,
+            0
+          ],
+          "Skill": 17
+        },
+        {
+          "Requirements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            0
+          ],
+          "Skill": 19
+        },
+        {
+          "Requirements": [
+            0,
+            70,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "Skill": 12
+        },
+        {
+          "Requirements": [
+            0,
+            0,
+            0,
+            0,
+            70,
+            0,
+            0
+          ],
+          "Skill": 15
+        },
+        {
+          "Requirements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            70,
+            0
+          ],
+          "Skill": 9
+        },
+        {
+          "Requirements": [
+            0,
+            0,
+            0,
+            0,
+            70,
+            0,
+            0
+          ],
+          "Skill": 14
+        },
+        {
+          "Requirements": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            70
+          ],
+          "Skill": 21
+        }
+      ],
+      "TierDescriptionLocKeys": [
+        "toolbelt_upgrade_tier_1_desc",
+        "toolbelt_upgrade_tier_2_desc",
+        "toolbelt_upgrade_tier_3_desc",
+        "toolbelt_upgrade_tier_4_desc",
+        "toolbelt_upgrade_tier_5_desc",
+        "toolbelt_upgrade_tier_6_desc",
+        "toolbelt_upgrade_tier_7_desc"
+      ],
+      "TierNameLocKeys": [
+        "toolbelt_upgrade_tier_1_name",
+        "toolbelt_upgrade_tier_2_name",
+        "toolbelt_upgrade_tier_3_name",
+        "toolbelt_upgrade_tier_4_name",
+        "toolbelt_upgrade_tier_5_name",
+        "toolbelt_upgrade_tier_6_name",
+        "toolbelt_upgrade_tier_7_name"
+      ],
+      "TierUnlocks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "Tiers": 7,
+      "Type": 26
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        3000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "Tiers": 1,
+      "Type": 27
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        5000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [],
+      "RepeatableCount": 0,
+      "Tiers": 1,
+      "Type": 28
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        5000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "Tiers": 1,
+      "Type": 29
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": true,
+      "ClanCreditCost": 0,
+      "Costs": [
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000
+      ],
+      "CustomRequirementLocKey": null,
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": null,
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "Tiers": 15,
+      "Type": 34
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        15000000
+      ],
+      "CustomRequirementLocKey": "upgrade_kronos_protection_requirement",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [],
+      "RepeatableCount": 0,
+      "Tiers": 0,
+      "Type": 36
+    },
+    {
+      "BenefitsCanBeToggledOff": true,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 692
+        }
+      ],
+      "RepeatableCount": 0,
+      "Tiers": 0,
+      "Type": 39
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 693
+        }
+      ],
+      "RepeatableCount": 0,
+      "Tiers": 0,
+      "Type": 40
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 694
+        }
+      ],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            95
+          ],
+          "Skill": 10
+        }
+      ],
+      "Tiers": 0,
+      "Type": 41
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 695
+        }
+      ],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            95
+          ],
+          "Skill": 8
+        }
+      ],
+      "Tiers": 0,
+      "Type": 42
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 696
+        }
+      ],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            90
+          ],
+          "Skill": 7
+        }
+      ],
+      "Tiers": 0,
+      "Type": 43
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 697
+        }
+      ],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            70
+          ],
+          "Skill": 7
+        }
+      ],
+      "Tiers": 0,
+      "Type": 44
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 698
+        }
+      ],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            70
+          ],
+          "Skill": 19
+        }
+      ],
+      "Tiers": 0,
+      "Type": 45
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 699
+        }
+      ],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            70
+          ],
+          "Skill": 19
+        }
+      ],
+      "Tiers": 0,
+      "Type": 46
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        15000000
+      ],
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": true,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        25
+      ],
+      "Tiers": 1,
+      "Type": 47
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        10000000
+      ],
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            90
+          ],
+          "Skill": 11
+        }
+      ],
+      "Tiers": 1,
+      "Type": 48
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 745
+        }
+      ],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            75
+          ],
+          "Skill": 8
+        },
+        {
+          "Requirements": [
+            75
+          ],
+          "Skill": 9
+        }
+      ],
+      "TierUnlocks": [
+        10
+      ],
+      "Tiers": 0,
+      "Type": 49
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 746
+        }
+      ],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        10
+      ],
+      "Tiers": 0,
+      "Type": 50
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        10000000
+      ],
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 836
+        },
+        {
+          "Amount": 1,
+          "Item": 837
+        }
+      ],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            90
+          ],
+          "Skill": 7
+        }
+      ],
+      "TierUnlocks": [
+        10
+      ],
+      "Tiers": 1,
+      "Type": 53
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 881
+        }
+      ],
+      "RepeatableCount": 0,
+      "Tiers": 1,
+      "Type": 55
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 884
+        }
+      ],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        10
+      ],
+      "Tiers": 1,
+      "Type": 56
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        25000000
+      ],
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 890
+        }
+      ],
+      "RepeatableCount": 0,
+      "SkillRequirements": [
+        {
+          "Requirements": [
+            100
+          ],
+          "Skill": 10
+        }
+      ],
+      "TierUnlocks": [
+        50
+      ],
+      "Tiers": 1,
+      "Type": 57
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "Costs": [
+        75000000
+      ],
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 891
+        }
+      ],
+      "RepeatableCount": 0,
+      "Tiers": 1,
+      "Type": 58
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 899
+        }
+      ],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        30
+      ],
+      "Tiers": 0,
+      "Type": 59
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 968
+        }
+      ],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        20
+      ],
+      "Tiers": 1,
+      "Type": 60
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 969
+        }
+      ],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        20
+      ],
+      "Tiers": 1,
+      "Type": 61
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 977
+        }
+      ],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        10
+      ],
+      "Tiers": 1,
+      "Type": 62
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 981
+        }
+      ],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        10
+      ],
+      "Tiers": 1,
+      "Type": 63
+    },
+    {
+      "BenefitsCanBeToggledOff": false,
+      "CanPurchaseInBulk": false,
+      "ClanCreditCost": 0,
+      "CustomRequirementLocKey": "",
+      "DisabledForIronmen": false,
+      "Discontinued": false,
+      "IsClanUpgrade": false,
+      "ItemCosts": [
+        {
+          "Amount": 1,
+          "Item": 984
+        }
+      ],
+      "RepeatableCount": 0,
+      "TierUnlocks": [
+        5
+      ],
+      "Tiers": 1,
+      "Type": 64
+    }
+  ],
+  "_id": "624014482729405d901303dd"
+}

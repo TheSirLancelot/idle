@@ -1,0 +1,555 @@
+{
+  "Data": {
+    "CraftingEventBrewingLoot": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 40,
+        "ItemAmountMin": 20,
+        "ItemId": 134,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 80,
+        "ItemAmountMin": 30,
+        "ItemId": 118,
+        "Weight": 20.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 60,
+        "ItemAmountMin": 20,
+        "ItemId": 1,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 50,
+        "ItemAmountMin": 10,
+        "ItemId": 273,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 50,
+        "ItemAmountMin": 20,
+        "ItemId": 6,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 30,
+        "ItemAmountMin": 10,
+        "ItemId": 135,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 30,
+        "ItemAmountMin": 10,
+        "ItemId": 274,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 40,
+        "ItemAmountMin": 10,
+        "ItemId": 2,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 30,
+        "ItemAmountMin": 10,
+        "ItemId": 9,
+        "Weight": 10.0
+      }
+    ],
+    "CraftingEventCookingLoot": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 75,
+        "ItemAmountMin": 30,
+        "ItemId": 164,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 65,
+        "ItemAmountMin": 25,
+        "ItemId": 104,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 60,
+        "ItemAmountMin": 20,
+        "ItemId": 105,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 50,
+        "ItemAmountMin": 15,
+        "ItemId": 106,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 40,
+        "ItemAmountMin": 10,
+        "ItemId": 158,
+        "Weight": 12.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 50,
+        "ItemAmountMin": 10,
+        "ItemId": 114,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 40,
+        "ItemAmountMin": 10,
+        "ItemId": 115,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 896,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 897,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 898,
+        "Weight": 1.0
+      }
+    ],
+    "CraftingEventCraftingLoot": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 60,
+        "ItemAmountMin": 30,
+        "ItemId": 273,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 50,
+        "ItemAmountMin": 20,
+        "ItemId": 274,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 25,
+        "ItemAmountMin": 10,
+        "ItemId": 275,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 225,
+        "Weight": 2.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 226,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 227,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 90,
+        "ItemAmountMin": 30,
+        "ItemId": 245,
+        "Weight": 20.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 300,
+        "ItemAmountMin": 100,
+        "ItemId": 260,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 250,
+        "ItemAmountMin": 75,
+        "ItemId": 261,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 200,
+        "ItemAmountMin": 50,
+        "ItemId": 262,
+        "Weight": 10.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 10000,
+        "ItemAmountMin": 2000,
+        "ItemId": 19,
+        "Weight": 6.0
+      }
+    ],
+    "CraftingEventFarmingLoot": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 30,
+        "ItemAmountMin": 10,
+        "ItemId": 132,
+        "Weight": 20.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 25,
+        "ItemAmountMin": 10,
+        "ItemId": 133,
+        "Weight": 20.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 10,
+        "ItemId": 134,
+        "Weight": 20.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 10,
+        "ItemId": 135,
+        "Weight": 20.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 10,
+        "ItemId": 136,
+        "Weight": 20.0
+      }
+    ],
+    "CraftingEventSmithingLoot": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 90,
+        "ItemAmountMin": 30,
+        "ItemId": 34,
+        "Weight": 20.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 80,
+        "ItemAmountMin": 25,
+        "ItemId": 35,
+        "Weight": 20.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 70,
+        "ItemAmountMin": 20,
+        "ItemId": 36,
+        "Weight": 20.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 60,
+        "ItemAmountMin": 15,
+        "ItemId": 37,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 50,
+        "ItemAmountMin": 10,
+        "ItemId": 38,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 10000,
+        "ItemAmountMin": 2000,
+        "ItemId": 19,
+        "Weight": 10.0
+      }
+    ],
+    "GatheringEventFishingLoot": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 594,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 595,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 596,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 40,
+        "ItemAmountMin": 20,
+        "ItemId": 12,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 35,
+        "ItemAmountMin": 15,
+        "ItemId": 13,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 30,
+        "ItemAmountMin": 10,
+        "ItemId": 14,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 5,
+        "ItemId": 15,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 15,
+        "ItemAmountMin": 5,
+        "ItemId": 157,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 10,
+        "ItemAmountMin": 5,
+        "ItemId": 161,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 10000,
+        "ItemAmountMin": 2000,
+        "ItemId": 19,
+        "Weight": 7.0
+      }
+    ],
+    "GatheringEventForagingLoot": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 597,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 598,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 599,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 40,
+        "ItemAmountMin": 20,
+        "ItemId": 165,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 35,
+        "ItemAmountMin": 15,
+        "ItemId": 138,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 30,
+        "ItemAmountMin": 10,
+        "ItemId": 273,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 25,
+        "ItemAmountMin": 5,
+        "ItemId": 122,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 5,
+        "ItemId": 274,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 15,
+        "ItemAmountMin": 5,
+        "ItemId": 125,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 10000,
+        "ItemAmountMin": 2000,
+        "ItemId": 19,
+        "Weight": 7.0
+      }
+    ],
+    "GatheringEventMiningLoot": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 591,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 592,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 593,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 40,
+        "ItemAmountMin": 20,
+        "ItemId": 30,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 35,
+        "ItemAmountMin": 15,
+        "ItemId": 31,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 30,
+        "ItemAmountMin": 10,
+        "ItemId": 32,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 25,
+        "ItemAmountMin": 5,
+        "ItemId": 33,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 5,
+        "ItemId": 39,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 15,
+        "ItemAmountMin": 5,
+        "ItemId": 41,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 10000,
+        "ItemAmountMin": 2000,
+        "ItemId": 19,
+        "Weight": 7.0
+      }
+    ],
+    "GatheringEventWoodcuttingLoot": [
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 588,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 589,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemId": 590,
+        "Weight": 1.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 40,
+        "ItemAmountMin": 20,
+        "ItemId": 1,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 35,
+        "ItemAmountMin": 15,
+        "ItemId": 6,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 30,
+        "ItemAmountMin": 10,
+        "ItemId": 7,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 25,
+        "ItemAmountMin": 5,
+        "ItemId": 8,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 20,
+        "ItemAmountMin": 5,
+        "ItemId": 2,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 15,
+        "ItemAmountMin": 5,
+        "ItemId": 9,
+        "Weight": 15.0
+      },
+      {
+        "CanBeRemovedFromDropTable": true,
+        "ItemAmountMax": 10000,
+        "ItemAmountMin": 2000,
+        "ItemId": 19,
+        "Weight": 7.0
+      }
+    ],
+    "MaxRewardAmountPerEvent": 6
+  },
+  "_id": "62efa8f9b36f273c1b1b5315"
+}
