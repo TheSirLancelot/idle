@@ -1,0 +1,287 @@
+{
+  "Items": [
+    {
+      "ClanCreditCost": 100,
+      "Costs": [
+        {
+          "Amount": 5000000,
+          "Item": 19
+        },
+        {
+          "Amount": 2500,
+          "Item": 20
+        },
+        {
+          "Amount": 2500,
+          "Item": 34
+        }
+      ],
+      "Description": "guild_house_1_description",
+      "GlobalSkillingBoost": 5,
+      "InventorySpace": 4,
+      "Name": "guild_house_1",
+      "SkillRequirements": [
+        {
+          "Level": 25,
+          "Skill": 8
+        },
+        {
+          "Level": 20,
+          "Skill": 10
+        },
+        {
+          "Level": 25,
+          "Skill": 12
+        },
+        {
+          "Level": 25,
+          "Skill": 13
+        },
+        {
+          "Level": 15,
+          "Skill": 14
+        },
+        {
+          "Level": 25,
+          "Skill": 9
+        }
+      ]
+    },
+    {
+      "ClanCreditCost": 500,
+      "Costs": [
+        {
+          "Amount": 7500000,
+          "Item": 19
+        },
+        {
+          "Amount": 5500,
+          "Item": 21
+        },
+        {
+          "Amount": 4500,
+          "Item": 35
+        }
+      ],
+      "Description": "guild_house_2_description",
+      "GlobalSkillingBoost": 10,
+      "InventorySpace": 8,
+      "Name": "guild_house_2",
+      "SkillRequirements": [
+        {
+          "Level": 45,
+          "Skill": 8
+        },
+        {
+          "Level": 35,
+          "Skill": 10
+        },
+        {
+          "Level": 45,
+          "Skill": 12
+        },
+        {
+          "Level": 45,
+          "Skill": 13
+        },
+        {
+          "Level": 30,
+          "Skill": 14
+        },
+        {
+          "Level": 45,
+          "Skill": 9
+        }
+      ]
+    },
+    {
+      "ClanCreditCost": 2000,
+      "Costs": [
+        {
+          "Amount": 20000000,
+          "Item": 19
+        },
+        {
+          "Amount": 12000,
+          "Item": 24
+        },
+        {
+          "Amount": 10000,
+          "Item": 36
+        }
+      ],
+      "Description": "guild_house_3_description",
+      "GlobalSkillingBoost": 15,
+      "InventorySpace": 12,
+      "Name": "guild_house_3",
+      "SkillRequirements": [
+        {
+          "Level": 65,
+          "Skill": 8
+        },
+        {
+          "Level": 50,
+          "Skill": 10
+        },
+        {
+          "Level": 60,
+          "Skill": 12
+        },
+        {
+          "Level": 60,
+          "Skill": 13
+        },
+        {
+          "Level": 50,
+          "Skill": 14
+        },
+        {
+          "Level": 65,
+          "Skill": 9
+        }
+      ]
+    },
+    {
+      "ClanCreditCost": 10000,
+      "Costs": [
+        {
+          "Amount": 50000000,
+          "Item": 19
+        },
+        {
+          "Amount": 20000,
+          "Item": 22
+        },
+        {
+          "Amount": 15000,
+          "Item": 43
+        }
+      ],
+      "Description": "guild_house_4_description",
+      "GlobalSkillingBoost": 20,
+      "InventorySpace": 18,
+      "Name": "guild_house_4",
+      "SkillRequirements": [
+        {
+          "Level": 75,
+          "Skill": 8
+        },
+        {
+          "Level": 65,
+          "Skill": 10
+        },
+        {
+          "Level": 70,
+          "Skill": 12
+        },
+        {
+          "Level": 70,
+          "Skill": 13
+        },
+        {
+          "Level": 60,
+          "Skill": 14
+        },
+        {
+          "Level": 75,
+          "Skill": 9
+        }
+      ]
+    },
+    {
+      "ClanCreditCost": 50000,
+      "Costs": [
+        {
+          "Amount": 100000000,
+          "Item": 19
+        },
+        {
+          "Amount": 50000,
+          "Item": 27
+        },
+        {
+          "Amount": 40000,
+          "Item": 45
+        }
+      ],
+      "Description": "guild_house_5_description",
+      "GlobalSkillingBoost": 25,
+      "InventorySpace": 24,
+      "Name": "guild_house_5",
+      "SkillRequirements": [
+        {
+          "Level": 90,
+          "Skill": 8
+        },
+        {
+          "Level": 85,
+          "Skill": 10
+        },
+        {
+          "Level": 90,
+          "Skill": 12
+        },
+        {
+          "Level": 85,
+          "Skill": 13
+        },
+        {
+          "Level": 80,
+          "Skill": 14
+        },
+        {
+          "Level": 95,
+          "Skill": 9
+        }
+      ]
+    },
+    {
+      "ClanCreditCost": 250000,
+      "Costs": [
+        {
+          "Amount": 500000000,
+          "Item": 19
+        },
+        {
+          "Amount": 250000,
+          "Item": 587
+        },
+        {
+          "Amount": 75000,
+          "Item": 46
+        }
+      ],
+      "Description": "guild_house_6_description",
+      "GlobalSkillingBoost": 30,
+      "InventorySpace": 30,
+      "Name": "guild_house_6",
+      "SkillRequirements": [
+        {
+          "Level": 100,
+          "Skill": 8
+        },
+        {
+          "Level": 100,
+          "Skill": 10
+        },
+        {
+          "Level": 100,
+          "Skill": 12
+        },
+        {
+          "Level": 100,
+          "Skill": 13
+        },
+        {
+          "Level": 100,
+          "Skill": 14
+        },
+        {
+          "Level": 100,
+          "Skill": 9
+        }
+      ]
+    }
+  ],
+  "_id": "61fe5fdede116bd96ca253ab"
+}

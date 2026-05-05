@@ -1,0 +1,555 @@
+{
+  "ExterminatingExperts": [
+    {
+      "Assignments": [
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 60,
+          "MinAmount": 20,
+          "MonsterName": "wolf",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 60,
+          "MinAmount": 20,
+          "MonsterName": "boar",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 60,
+          "MinAmount": 20,
+          "MonsterName": "bear",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 60,
+          "MinAmount": 20,
+          "MonsterName": "scorpion",
+          "Weight": 7
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 60,
+          "MinAmount": 20,
+          "MonsterName": "snake",
+          "Weight": 7
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 50,
+          "MinAmount": 20,
+          "MonsterName": "crocodile",
+          "Weight": 7
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 50,
+          "MinAmount": 20,
+          "MonsterName": "goblin",
+          "Weight": 6
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 50,
+          "MinAmount": 20,
+          "MonsterName": "cave_dweller",
+          "Weight": 6
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 50,
+          "MinAmount": 20,
+          "MonsterName": "orange_dragon",
+          "Weight": 5
+        }
+      ],
+      "DescriptionLocKey": "eldric_description",
+      "DifficultyLocKey": "very_easy",
+      "HealthLevelRequirement": 1,
+      "NameLocKey": "eldric",
+      "PointsPerAssignment": 5,
+      "_id": 0
+    },
+    {
+      "Assignments": [
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "troll",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "wandering_warrior",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "druid",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "gorilla",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "giant",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "green_dragon",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 30,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "golem",
+          "Weight": 4
+        },
+        {
+          "LevelRequirement": 40,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "mammoth",
+          "Weight": 4
+        },
+        {
+          "LevelRequirement": 50,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "basilisk",
+          "Weight": 4
+        }
+      ],
+      "DescriptionLocKey": "morgana_description",
+      "DifficultyLocKey": "easy",
+      "HealthLevelRequirement": 25,
+      "NameLocKey": "morgana",
+      "PointsPerAssignment": 10,
+      "_id": 1
+    },
+    {
+      "Assignments": [
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "ghost",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "zombie",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "possessed_bear",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "witch",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "demon",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "red_dragon",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 60,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "banshee",
+          "Weight": 4
+        },
+        {
+          "LevelRequirement": 65,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "gargoyle",
+          "Weight": 4
+        },
+        {
+          "LevelRequirement": 70,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "cockatrice",
+          "Weight": 4
+        }
+      ],
+      "DescriptionLocKey": "alaric_description",
+      "DifficultyLocKey": "moderate",
+      "HealthLevelRequirement": 40,
+      "NameLocKey": "alaric",
+      "PointsPerAssignment": 15,
+      "_id": 2
+    },
+    {
+      "Assignments": [
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "mad_wizard",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "vampire",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "werewolf",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "dark_wizard",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "cerberus",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "black_dragon",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 75,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "roc",
+          "Weight": 3
+        },
+        {
+          "LevelRequirement": 79,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "dire_wolf",
+          "Weight": 3
+        },
+        {
+          "LevelRequirement": 83,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "behemoth",
+          "Weight": 3
+        },
+        {
+          "LevelRequirement": 87,
+          "MaxAmount": 250,
+          "MinAmount": 125,
+          "MonsterName": "wyvern",
+          "Weight": 3
+        }
+      ],
+      "DescriptionLocKey": "thorne_description",
+      "DifficultyLocKey": "medium",
+      "HealthLevelRequirement": 60,
+      "NameLocKey": "thorne",
+      "PointsPerAssignment": 20,
+      "_id": 3
+    },
+    {
+      "Assignments": [
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "hydra",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "manticore",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "minotaur",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "centaur",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "necromancer",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 1,
+          "MaxAmount": 150,
+          "MinAmount": 75,
+          "MonsterName": "mutated_dragon",
+          "Weight": 10
+        },
+        {
+          "LevelRequirement": 91,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "drake",
+          "Weight": 2
+        },
+        {
+          "LevelRequirement": 95,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "naga",
+          "Weight": 2
+        },
+        {
+          "LevelRequirement": 99,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "kraken",
+          "Weight": 2
+        },
+        {
+          "LevelRequirement": 102,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "fury",
+          "Weight": 2
+        },
+        {
+          "LevelRequirement": 105,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "phoenix",
+          "Weight": 2
+        },
+        {
+          "LevelRequirement": 110,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "grimwark",
+          "Weight": 2
+        },
+        {
+          "LevelRequirement": 115,
+          "MaxAmount": 200,
+          "MinAmount": 100,
+          "MonsterName": "otherworldly_executioner",
+          "Weight": 2
+        }
+      ],
+      "DescriptionLocKey": "sila_description",
+      "DifficultyLocKey": "hard",
+      "HealthLevelRequirement": 80,
+      "NameLocKey": "sila",
+      "PointsPerAssignment": 30,
+      "_id": 4
+    }
+  ],
+  "ShopUnlocks": [
+    {
+      "AssociatedSetting": 0,
+      "Cost": 30,
+      "DescriptionLocKey": "cancel_assignment_desc",
+      "HasToggle": false,
+      "NameLocKey": "cancel_assignment_title",
+      "PurchaseLimitScope": 0,
+      "Repeating": true,
+      "UnlockType": 1
+    },
+    {
+      "AssociatedSetting": 6,
+      "Cost": 100,
+      "DescriptionLocKey": "",
+      "HasToggle": false,
+      "NameLocKey": "supply_crate",
+      "PurchaseLimitScope": 1,
+      "Repeating": true,
+      "UnlockType": 5
+    },
+    {
+      "AssociatedSetting": 3,
+      "Cost": 500,
+      "DescriptionLocKey": "exterminating_auto_complete_desc",
+      "HasToggle": true,
+      "NameLocKey": "exterminating_auto_complete",
+      "PurchaseLimitScope": 0,
+      "Repeating": false,
+      "UnlockType": 2
+    },
+    {
+      "AssociatedSetting": 4,
+      "Cost": 5000,
+      "DescriptionLocKey": "exterminating_boss_extension_desc",
+      "HasToggle": true,
+      "NameLocKey": "exterminating_boss_extension",
+      "PurchaseLimitScope": 0,
+      "Repeating": false,
+      "UnlockType": 3
+    },
+    {
+      "AssociatedSetting": 6,
+      "Cost": 25000,
+      "DescriptionLocKey": "exterminating_bloodmoon_equipment_description",
+      "HasToggle": false,
+      "NameLocKey": "exterminating_bloodmoon_equipment",
+      "PurchaseLimitScope": 0,
+      "Repeating": false,
+      "UnlockType": 4
+    }
+  ],
+  "SupplyCrateLoot": [
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 20,
+      "ItemAmountMin": 10,
+      "ItemId": 130,
+      "LevelRequirement": 0,
+      "Weight": 10.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 20,
+      "ItemAmountMin": 10,
+      "ItemId": 131,
+      "LevelRequirement": 0,
+      "Weight": 10.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 20,
+      "ItemAmountMin": 10,
+      "ItemId": 400,
+      "LevelRequirement": 0,
+      "Weight": 10.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 10,
+      "ItemAmountMin": 5,
+      "ItemId": 402,
+      "LevelRequirement": 0,
+      "Weight": 10.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 10,
+      "ItemAmountMin": 5,
+      "ItemId": 404,
+      "LevelRequirement": 0,
+      "Weight": 5.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 100,
+      "ItemAmountMin": 50,
+      "ItemId": 247,
+      "LevelRequirement": 0,
+      "Weight": 10.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 100,
+      "ItemAmountMin": 50,
+      "ItemId": 248,
+      "LevelRequirement": 0,
+      "Weight": 10.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 100,
+      "ItemAmountMin": 50,
+      "ItemId": 249,
+      "LevelRequirement": 0,
+      "Weight": 5.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 1000,
+      "ItemAmountMin": 500,
+      "ItemId": 263,
+      "LevelRequirement": 0,
+      "Weight": 10.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 800,
+      "ItemAmountMin": 400,
+      "ItemId": 264,
+      "LevelRequirement": 0,
+      "Weight": 10.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 500,
+      "ItemAmountMin": 300,
+      "ItemId": 265,
+      "LevelRequirement": 0,
+      "Weight": 5.0
+    },
+    {
+      "CanBeRemovedFromDropTable": true,
+      "ItemAmountMax": 0,
+      "ItemAmountMin": 0,
+      "ItemId": 911,
+      "LevelRequirement": 0,
+      "Weight": 5.0
+    }
+  ],
+  "_id": "68e36f3c8a903b8ae09eb6d6"
+}

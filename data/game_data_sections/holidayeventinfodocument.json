@@ -1,0 +1,460 @@
+{
+  "Items": [
+    {
+      "CurrencyGivenForMillionGold": 1.0,
+      "CurrencyItemId": 679,
+      "DemiBossCurrencyDropAmountMax": 200000,
+      "DemiBossCurrencyDropAmountMin": 100000,
+      "DemiBossCurrencyDropChance": 10,
+      "EnableCurrencyFromBosses": true,
+      "EnableCurrencyFromChests": true,
+      "EndDay": 7,
+      "EndHour": 9,
+      "EndMinute": 0,
+      "EndMonth": 11,
+      "EventType": 1,
+      "InAppPurchases": [
+        {
+          "ProductId": "sku_holiday_event_currency_pack_small",
+          "RewardAmount": 12000000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_medium",
+          "RewardAmount": 32400000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_large",
+          "RewardAmount": 69600000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_gigantic",
+          "RewardAmount": 150000000
+        }
+      ],
+      "KronosCurrencyDropAmountMax": 2000000,
+      "KronosCurrencyDropAmountMin": 1000000,
+      "KronosCurrencyDropChance": 10,
+      "Milestones": [
+        {
+          "CurrencyRemovedEveryHour": 0,
+          "CurrencyRequirement": 0.0,
+          "ExperienceBoost": 2
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000,
+          "CurrencyRequirement": 10000000.0,
+          "ExperienceBoost": 4
+        },
+        {
+          "CurrencyRemovedEveryHour": 500000,
+          "CurrencyRequirement": 50000000.0,
+          "ExperienceBoost": 6
+        },
+        {
+          "CurrencyRemovedEveryHour": 2500000,
+          "CurrencyRequirement": 250000000.0,
+          "ExperienceBoost": 8
+        },
+        {
+          "CurrencyRemovedEveryHour": 5000000,
+          "CurrencyRequirement": 500000000.0,
+          "ExperienceBoost": 10
+        },
+        {
+          "CurrencyRemovedEveryHour": 10000000,
+          "CurrencyRequirement": 1000000000.0,
+          "ExperienceBoost": 12
+        },
+        {
+          "CurrencyRemovedEveryHour": 25000000,
+          "CurrencyRequirement": 2500000000.0,
+          "ExperienceBoost": 14
+        },
+        {
+          "CurrencyRemovedEveryHour": 50000000,
+          "CurrencyRequirement": 5000000000.0,
+          "ExperienceBoost": 16
+        },
+        {
+          "CurrencyRemovedEveryHour": 75000000,
+          "CurrencyRequirement": 7500000000.0,
+          "ExperienceBoost": 20
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000000,
+          "CurrencyRequirement": 10000000000.0,
+          "ExperienceBoost": 25
+        }
+      ],
+      "StartDay": 24,
+      "StartHour": 9,
+      "StartMinute": 0,
+      "StartMonth": 10
+    },
+    {
+      "CurrencyGivenForMillionGold": 1.0,
+      "CurrencyItemId": 680,
+      "DemiBossCurrencyDropAmountMax": 200000,
+      "DemiBossCurrencyDropAmountMin": 100000,
+      "DemiBossCurrencyDropChance": 10,
+      "EnableCurrencyFromBosses": true,
+      "EnableCurrencyFromChests": true,
+      "EndDay": 31,
+      "EndHour": 9,
+      "EndMinute": 0,
+      "EndMonth": 12,
+      "EventType": 2,
+      "InAppPurchases": [
+        {
+          "ProductId": "sku_holiday_event_currency_pack_small",
+          "RewardAmount": 12000000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_medium",
+          "RewardAmount": 32400000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_large",
+          "RewardAmount": 69600000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_gigantic",
+          "RewardAmount": 150000000
+        }
+      ],
+      "KronosCurrencyDropAmountMax": 2000000,
+      "KronosCurrencyDropAmountMin": 1000000,
+      "KronosCurrencyDropChance": 10,
+      "Milestones": [
+        {
+          "CurrencyRemovedEveryHour": 0,
+          "CurrencyRequirement": 0.0,
+          "ExperienceBoost": 2
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000,
+          "CurrencyRequirement": 10000000.0,
+          "ExperienceBoost": 4
+        },
+        {
+          "CurrencyRemovedEveryHour": 500000,
+          "CurrencyRequirement": 50000000.0,
+          "ExperienceBoost": 6
+        },
+        {
+          "CurrencyRemovedEveryHour": 2500000,
+          "CurrencyRequirement": 250000000.0,
+          "ExperienceBoost": 8
+        },
+        {
+          "CurrencyRemovedEveryHour": 5000000,
+          "CurrencyRequirement": 500000000.0,
+          "ExperienceBoost": 10
+        },
+        {
+          "CurrencyRemovedEveryHour": 10000000,
+          "CurrencyRequirement": 1000000000.0,
+          "ExperienceBoost": 12
+        },
+        {
+          "CurrencyRemovedEveryHour": 25000000,
+          "CurrencyRequirement": 2500000000.0,
+          "ExperienceBoost": 14
+        },
+        {
+          "CurrencyRemovedEveryHour": 50000000,
+          "CurrencyRequirement": 5000000000.0,
+          "ExperienceBoost": 16
+        },
+        {
+          "CurrencyRemovedEveryHour": 75000000,
+          "CurrencyRequirement": 7500000000.0,
+          "ExperienceBoost": 20
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000000,
+          "CurrencyRequirement": 10000000000.0,
+          "ExperienceBoost": 25
+        }
+      ],
+      "StartDay": 17,
+      "StartHour": 9,
+      "StartMinute": 0,
+      "StartMonth": 12
+    },
+    {
+      "CurrencyGivenForMillionGold": 1.0,
+      "CurrencyItemId": 681,
+      "DemiBossCurrencyDropAmountMax": 200000,
+      "DemiBossCurrencyDropAmountMin": 100000,
+      "DemiBossCurrencyDropChance": 10,
+      "EnableCurrencyFromBosses": true,
+      "EnableCurrencyFromChests": true,
+      "EndDay": 5,
+      "EndHour": 14,
+      "EndMinute": 0,
+      "EndMonth": 3,
+      "EventType": 3,
+      "InAppPurchases": [
+        {
+          "ProductId": "sku_holiday_event_currency_pack_small",
+          "RewardAmount": 12000000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_medium",
+          "RewardAmount": 32400000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_large",
+          "RewardAmount": 69600000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_gigantic",
+          "RewardAmount": 150000000
+        }
+      ],
+      "KronosCurrencyDropAmountMax": 2000000,
+      "KronosCurrencyDropAmountMin": 1000000,
+      "KronosCurrencyDropChance": 10,
+      "Milestones": [
+        {
+          "CurrencyRemovedEveryHour": 0,
+          "CurrencyRequirement": 0.0,
+          "ExperienceBoost": 2
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000,
+          "CurrencyRequirement": 10000000.0,
+          "ExperienceBoost": 4
+        },
+        {
+          "CurrencyRemovedEveryHour": 500000,
+          "CurrencyRequirement": 50000000.0,
+          "ExperienceBoost": 6
+        },
+        {
+          "CurrencyRemovedEveryHour": 2500000,
+          "CurrencyRequirement": 250000000.0,
+          "ExperienceBoost": 8
+        },
+        {
+          "CurrencyRemovedEveryHour": 5000000,
+          "CurrencyRequirement": 500000000.0,
+          "ExperienceBoost": 10
+        },
+        {
+          "CurrencyRemovedEveryHour": 10000000,
+          "CurrencyRequirement": 1000000000.0,
+          "ExperienceBoost": 12
+        },
+        {
+          "CurrencyRemovedEveryHour": 25000000,
+          "CurrencyRequirement": 2500000000.0,
+          "ExperienceBoost": 14
+        },
+        {
+          "CurrencyRemovedEveryHour": 50000000,
+          "CurrencyRequirement": 5000000000.0,
+          "ExperienceBoost": 16
+        },
+        {
+          "CurrencyRemovedEveryHour": 75000000,
+          "CurrencyRequirement": 7500000000.0,
+          "ExperienceBoost": 20
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000000,
+          "CurrencyRequirement": 10000000000.0,
+          "ExperienceBoost": 25
+        }
+      ],
+      "StartDay": 11,
+      "StartHour": 10,
+      "StartMinute": 0,
+      "StartMonth": 2
+    },
+    {
+      "CurrencyGivenForMillionGold": 1.0,
+      "CurrencyItemId": 682,
+      "DemiBossCurrencyDropAmountMax": 200000,
+      "DemiBossCurrencyDropAmountMin": 100000,
+      "DemiBossCurrencyDropChance": 10,
+      "EnableCurrencyFromBosses": true,
+      "EnableCurrencyFromChests": true,
+      "EndDay": 14,
+      "EndHour": 10,
+      "EndMinute": 0,
+      "EndMonth": 4,
+      "EventType": 4,
+      "InAppPurchases": [
+        {
+          "ProductId": "sku_holiday_event_currency_pack_small",
+          "RewardAmount": 12000000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_medium",
+          "RewardAmount": 32400000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_large",
+          "RewardAmount": 69600000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_gigantic",
+          "RewardAmount": 150000000
+        }
+      ],
+      "KronosCurrencyDropAmountMax": 2000000,
+      "KronosCurrencyDropAmountMin": 1000000,
+      "KronosCurrencyDropChance": 10,
+      "Milestones": [
+        {
+          "CurrencyRemovedEveryHour": 0,
+          "CurrencyRequirement": 0.0,
+          "ExperienceBoost": 2
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000,
+          "CurrencyRequirement": 10000000.0,
+          "ExperienceBoost": 4
+        },
+        {
+          "CurrencyRemovedEveryHour": 500000,
+          "CurrencyRequirement": 50000000.0,
+          "ExperienceBoost": 6
+        },
+        {
+          "CurrencyRemovedEveryHour": 2500000,
+          "CurrencyRequirement": 250000000.0,
+          "ExperienceBoost": 8
+        },
+        {
+          "CurrencyRemovedEveryHour": 5000000,
+          "CurrencyRequirement": 500000000.0,
+          "ExperienceBoost": 10
+        },
+        {
+          "CurrencyRemovedEveryHour": 10000000,
+          "CurrencyRequirement": 1000000000.0,
+          "ExperienceBoost": 12
+        },
+        {
+          "CurrencyRemovedEveryHour": 25000000,
+          "CurrencyRequirement": 2500000000.0,
+          "ExperienceBoost": 14
+        },
+        {
+          "CurrencyRemovedEveryHour": 50000000,
+          "CurrencyRequirement": 5000000000.0,
+          "ExperienceBoost": 16
+        },
+        {
+          "CurrencyRemovedEveryHour": 75000000,
+          "CurrencyRequirement": 7500000000.0,
+          "ExperienceBoost": 20
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000000,
+          "CurrencyRequirement": 10000000000.0,
+          "ExperienceBoost": 25
+        }
+      ],
+      "StartDay": 7,
+      "StartHour": 10,
+      "StartMinute": 0,
+      "StartMonth": 4
+    },
+    {
+      "CurrencyGivenForMillionGold": 1.0,
+      "CurrencyItemId": 892,
+      "DemiBossCurrencyDropAmountMax": 200000,
+      "DemiBossCurrencyDropAmountMin": 100000,
+      "DemiBossCurrencyDropChance": 10,
+      "EnableCurrencyFromBosses": true,
+      "EnableCurrencyFromChests": true,
+      "EndDay": 8,
+      "EndHour": 8,
+      "EndMinute": 0,
+      "EndMonth": 8,
+      "EventType": 5,
+      "InAppPurchases": [
+        {
+          "ProductId": "sku_holiday_event_currency_pack_small",
+          "RewardAmount": 12000000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_medium",
+          "RewardAmount": 32400000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_large",
+          "RewardAmount": 69600000
+        },
+        {
+          "ProductId": "sku_holiday_event_currency_pack_gigantic",
+          "RewardAmount": 150000000
+        }
+      ],
+      "KronosCurrencyDropAmountMax": 2000000,
+      "KronosCurrencyDropAmountMin": 1000000,
+      "KronosCurrencyDropChance": 10,
+      "Milestones": [
+        {
+          "CurrencyRemovedEveryHour": 0,
+          "CurrencyRequirement": 0.0,
+          "ExperienceBoost": 2
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000,
+          "CurrencyRequirement": 10000000.0,
+          "ExperienceBoost": 4
+        },
+        {
+          "CurrencyRemovedEveryHour": 500000,
+          "CurrencyRequirement": 50000000.0,
+          "ExperienceBoost": 6
+        },
+        {
+          "CurrencyRemovedEveryHour": 2500000,
+          "CurrencyRequirement": 250000000.0,
+          "ExperienceBoost": 8
+        },
+        {
+          "CurrencyRemovedEveryHour": 5000000,
+          "CurrencyRequirement": 500000000.0,
+          "ExperienceBoost": 10
+        },
+        {
+          "CurrencyRemovedEveryHour": 10000000,
+          "CurrencyRequirement": 1000000000.0,
+          "ExperienceBoost": 12
+        },
+        {
+          "CurrencyRemovedEveryHour": 25000000,
+          "CurrencyRequirement": 2500000000.0,
+          "ExperienceBoost": 14
+        },
+        {
+          "CurrencyRemovedEveryHour": 50000000,
+          "CurrencyRequirement": 5000000000.0,
+          "ExperienceBoost": 16
+        },
+        {
+          "CurrencyRemovedEveryHour": 75000000,
+          "CurrencyRequirement": 7500000000.0,
+          "ExperienceBoost": 20
+        },
+        {
+          "CurrencyRemovedEveryHour": 100000000,
+          "CurrencyRequirement": 10000000000.0,
+          "ExperienceBoost": 25
+        }
+      ],
+      "StartDay": 25,
+      "StartHour": 8,
+      "StartMinute": 0,
+      "StartMonth": 7
+    }
+  ],
+  "_id": "652f836ee34a26f270fffac4"
+}

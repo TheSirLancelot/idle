@@ -1,0 +1,197 @@
+{
+  "Settings": {
+    "AccountAgeHoursRequiredToSellRMItems": 0,
+    "AfkRaidTimeModifier": 5.0,
+    "BaseClanVaultSpace": 8,
+    "BaseOfflineProgressCapHours": 12,
+    "ChatEnabled": true,
+    "ChatTotalLevelRequirement": 100,
+    "ClanCreditsPerBossKill": 12,
+    "ClanCreditsPerChest": [
+      {
+        "ChestName": "common_chest",
+        "Credits": 2
+      },
+      {
+        "ChestName": "rare_chest",
+        "Credits": 4
+      },
+      {
+        "ChestName": "exceptional_chest",
+        "Credits": 10
+      }
+    ],
+    "ClanCreditsPerClanTaskCompletion": 16,
+    "ClanCreditsPerMinigameParticipant": 4,
+    "ClanCreditsPerRefinement": [
+      {
+        "Credits": 2,
+        "RefinementType": 2
+      },
+      {
+        "Credits": 4,
+        "RefinementType": 3
+      },
+      {
+        "Credits": 10,
+        "RefinementType": 4
+      },
+      {
+        "Credits": 20,
+        "RefinementType": 5
+      },
+      {
+        "Credits": 40,
+        "RefinementType": 6
+      },
+      {
+        "Credits": 120,
+        "RefinementType": 7
+      },
+      {
+        "Credits": 500,
+        "RefinementType": 8
+      }
+    ],
+    "ClanCupCreditRewards": [
+      5000,
+      3500,
+      3000,
+      2500,
+      2000,
+      1500,
+      1000,
+      750,
+      500,
+      250
+    ],
+    "ClanCupCreditRewardsIronman": [
+      2500,
+      1750,
+      1500,
+      1250,
+      1000,
+      750,
+      500,
+      375,
+      250,
+      125
+    ],
+    "CombatExpPerHit": 4,
+    "CombatExperienceEventExpMultiplier": 6,
+    "CombatNpcWeaknessDamageBoostPct": 20,
+    "CombatNpcWeaknessDefenceReductionPct": 20,
+    "CombatPetExperienceSharePercentage": 20,
+    "ConfigVersion": 371,
+    "CreditsPerReckoningOfTheGodsRun": 3,
+    "DailyAdsBoostDurationMinutes": 120,
+    "DailyAdsExperienceBoostPct": 30,
+    "DailyAdsLimit": 4,
+    "DailyAdsWatchCooldownMinutes": 120,
+    "EnemyRespawnTimeMS": 2550,
+    "ExperienceBoostPercentagePerDailyGatheringEventParticipant": 2,
+    "GoldCostForClanCreation": 10000,
+    "GuildAmountOfLatestLogsStored": 100,
+    "GuildAmountOfPlayerLogsStored": 25,
+    "GuildMaxCharacters": 18,
+    "GuildMaxMembers": 20,
+    "GuildMinCharacters": 3,
+    "HealthBoostPercentagePerParticipantInClanCombatExperienceEvent": 5,
+    "HealthExpPerHit": 1,
+    "IAPClanVaultSpacePerPurchase": 4,
+    "IAPCreditBoostDurationHours": 72,
+    "IAPGemstoneBoostDurationHours": 12,
+    "IAPInventorySpacePerPurchase": 30,
+    "IAPMaxPurchasableClanVaultSpace": 200,
+    "IAPMaxPurchasableClanVaultSpaceIronman": 80,
+    "IAPMaxPurchasableInventorySpace": 300,
+    "IAPMinigameBoostDurationHours": 24,
+    "LatestBuildVersion": "1.6300",
+    "LeaderInactiveDaysUntilDeputyCanClaimLeadership": 28,
+    "LeaderInactiveDaysUntilRegularMemberCanClaimLeadership": 90,
+    "MaxAfkRaidDays": 3,
+    "MaxAvailableInventorySlots": 250,
+    "MaxChatMessageCharacters": 100,
+    "MaxPlayerGold": 2000000000.0,
+    "MaxPlayerShopSlots": 6,
+    "MaxPlayerSkillExperience": 500000000,
+    "MaxPremiumSkillLevelWithoutRank": 30,
+    "MaxSkillLevel": 120,
+    "MaxWhiteListedPlayers": 20,
+    "MaximumItemsInWithdrawalPerPlayer": 20,
+    "MaximumTotalItemsInWithdrawal": 60,
+    "MinigameDurationMinutes": 2,
+    "MinigameSkillAttackInterval": 3000,
+    "OfflineHoursFromPremium": 6,
+    "PetTaskLengthModifier": 4,
+    "PlayerMarketQuantityRestrictionHourLimit": 24,
+    "PlayerShareOfPetTaskWithCostsPercentage": 100,
+    "PlayerShareOfPetTaskWithoutCostsPercentage": 100,
+    "PlayerShopSlotsWithoutPremium": 3,
+    "PlayerShopTaxPercentage": 1.0,
+    "PremiumClanCreditBoostPercentage": 25,
+    "PremiumOneMonthItemId": 336,
+    "PremiumPermanentItemId": 337,
+    "RaidHealthPercentageToRecoverToAfterBattle": 25,
+    "RaidsStarterItems": [
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      208,
+      209,
+      220
+    ],
+    "RequiredBuildVersion": "1.6300",
+    "RitualPowerCurveSettings": {
+      "GlobalRitualPowerMultiplier": 0.75,
+      "RitualPowerExponentK": 0.36800000071525574,
+      "RitualPowerMaxMultiplier": 2.5,
+      "RitualPowerMinMultiplier": 0.30000001192092896,
+      "RitualPowerRefBaseValue": 1000.0,
+      "RitualPowerRefMultiplier": 1.0,
+      "UntradeableItemMultiplier": 5.0
+    },
+    "StarterInventorySlotsUnlockedAmount": 60,
+    "TasksLockedBehindPremium": [
+      10,
+      12,
+      14
+    ],
+    "TotalLevelRequirementForClanCreation": 100,
+    "TutorialCombatLoot": [
+      {
+        "ItemAmount": 250,
+        "ItemId": 19
+      },
+      {
+        "ItemAmount": 1,
+        "ItemId": 49
+      },
+      {
+        "ItemAmount": 1,
+        "ItemId": 50
+      },
+      {
+        "ItemAmount": 6,
+        "ItemId": 35
+      },
+      {
+        "ItemAmount": 20,
+        "ItemId": 159
+      },
+      {
+        "ItemAmount": 12,
+        "ItemId": 165
+      }
+    ],
+    "TwoFactorAuthenticationEnabled": true,
+    "UnarmedAttackSpeedMS": 3600,
+    "UntradeablePremiumUnlockCost": 1000000,
+    "WeeklyQuestCompletionModifier": 20,
+    "WeeklyQuestRewardModifier": 5
+  },
+  "_id": "6995afa0b57160da2fa6ee48"
+}

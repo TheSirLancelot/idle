@@ -18,7 +18,9 @@ Examples::
 from __future__ import annotations
 
 import argparse
+import json
 import sys
+from pathlib import Path
 
 from .api import IdleClansClient
 from .api.exceptions import IdleClansAPIError, NetworkError, NotFoundError, RateLimitError
@@ -115,6 +117,27 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Filter by item name (optional).",
     )
 
+    # ---- game-data ---------------------------------------------------------
+    game_data_parser = subparsers.add_parser(
+        "gamedata",
+        help="List or export static game-data sections.",
+    )
+    game_data_parser.add_argument(
+        "--list-sections",
+        action="store_true",
+        help="List top-level game-data sections.",
+    )
+    game_data_parser.add_argument(
+        "--section",
+        default=None,
+        help="Top-level section name to export (for example: Items).",
+    )
+    game_data_parser.add_argument(
+        "--output",
+        default=None,
+        help="Output JSON path for exported data.",
+    )
+
     return parser
 
 
@@ -205,6 +228,29 @@ def _cmd_market(client: IdleClansClient, args: argparse.Namespace) -> None:
         print(f"{item.item_name:<30} {item.price:>10,} {item.quantity:>8,} {seller:<24}")
 
 
+def _cmd_gamedata(client: IdleClansClient, args: argparse.Namespace) -> None:
+    show_sections = args.list_sections or not args.section
+    if show_sections:
+        sections = client.list_game_data_sections()
+        print("Game-data sections:")
+        for name in sections:
+            print(f"  - {name}")
+        if not args.section:
+            return
+
+    payload = client.get_game_data_section(args.section)
+    rendered = json.dumps(payload, indent=2, sort_keys=True)
+
+    if args.output:
+        output_path = Path(args.output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.write_text(rendered + "\n", encoding="utf-8")
+        print(f"Wrote section '{args.section}' to {output_path}")
+        return
+
+    print(rendered)
+
+
 # ---------------------------------------------------------------------------
 # Main entry point
 # ---------------------------------------------------------------------------
@@ -214,6 +260,7 @@ _HANDLERS = {
     "clan": _cmd_clan,
     "leaderboard": _cmd_leaderboard,
     "market": _cmd_market,
+    "gamedata": _cmd_gamedata,
 }
 
 

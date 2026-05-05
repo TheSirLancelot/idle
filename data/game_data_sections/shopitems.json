@@ -1,0 +1,1705 @@
+{
+  "Items": [
+    {
+      "CategoryType": 3,
+      "Cost": 45,
+      "DescriptionLocalizationKey": "arrow_description",
+      "EntityId": 260,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 100,
+      "DescriptionLocalizationKey": "basic_smithing_desc",
+      "EntityId": 34,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 4,
+      "Cost": 350,
+      "DescriptionLocalizationKey": "bronze_armour_desc",
+      "EntityId": 51,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 4,
+      "Cost": 1000,
+      "DescriptionLocalizationKey": "bronze_armour_desc",
+      "EntityId": 49,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 4,
+      "Cost": 800,
+      "DescriptionLocalizationKey": "bronze_armour_desc",
+      "EntityId": 50,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 4,
+      "Cost": 600,
+      "DescriptionLocalizationKey": "bronze_armour_desc",
+      "EntityId": 52,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 5,
+      "Cost": 475,
+      "DescriptionLocalizationKey": "seed_description",
+      "EntityId": 127,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 120,
+      "DescriptionLocalizationKey": "basic_crafting_material_desc",
+      "EntityId": 245,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 3,
+      "Cost": 750,
+      "DescriptionLocalizationKey": "bronze_weapon_desc",
+      "EntityId": 153,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 3,
+      "Cost": 1000,
+      "DescriptionLocalizationKey": "bronze_weapon_desc",
+      "EntityId": 168,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 3,
+      "Cost": 750,
+      "DescriptionLocalizationKey": "bronze_weapon_desc",
+      "EntityId": 152,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 3,
+      "Cost": 1000,
+      "DescriptionLocalizationKey": "bronze_weapon_desc",
+      "EntityId": 169,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 3,
+      "Cost": 750,
+      "DescriptionLocalizationKey": "bronze_weapon_desc",
+      "EntityId": 151,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 3,
+      "Cost": 750,
+      "DescriptionLocalizationKey": "bronze_weapon_desc",
+      "EntityId": 149,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 3,
+      "Cost": 750,
+      "DescriptionLocalizationKey": "bronze_weapon_desc",
+      "EntityId": 150,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 3,
+      "Cost": 750,
+      "DescriptionLocalizationKey": "bronze_weapon_desc",
+      "EntityId": 154,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 3,
+      "Cost": 1000,
+      "DescriptionLocalizationKey": "bronze_weapon_desc",
+      "EntityId": 218,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 5,
+      "Cost": 350,
+      "DescriptionLocalizationKey": "seed_description",
+      "EntityId": 126,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 50,
+      "DescriptionLocalizationKey": "basic_raw_food_desc",
+      "EntityId": 159,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 10,
+      "Cost": 1000000,
+      "DescriptionLocalizationKey": "cosmetic_scroll_description",
+      "EntityId": 395,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 10,
+      "Cost": 1000000,
+      "DescriptionLocalizationKey": "cosmetic_scroll_description",
+      "EntityId": 396,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 10,
+      "Cost": 1000,
+      "DescriptionLocalizationKey": "gilded_pet_1_shop_description",
+      "EntityId": 766,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 10,
+      "Cost": 250000000,
+      "DescriptionLocalizationKey": "gilded_pet_2_shop_description",
+      "EntityId": 767,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 10,
+      "Cost": 1000000,
+      "DescriptionLocalizationKey": "cosmetic_scroll_description",
+      "EntityId": 398,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 10,
+      "Cost": 1000000,
+      "DescriptionLocalizationKey": "cosmetic_scroll_description",
+      "EntityId": 397,
+      "RewardType": 0,
+      "ShopType": 0
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 453,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 16
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 472,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 16
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 491,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 16
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 510,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 16
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 9,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 454,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 4
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 473,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 4
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 492,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 4
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 511,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 4
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 455,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 19
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 474,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 19
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 493,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 19
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 512,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 19
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 456,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 9
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 475,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 9
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 494,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 9
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 513,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 9
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 7,
+      "Cost": 1000000,
+      "EntityId": 529,
+      "MultipleItemEntries": [],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 7,
+      "Cost": 2000000,
+      "EntityId": 530,
+      "MultipleItemEntries": [],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 7,
+      "Cost": 4000000,
+      "EntityId": 531,
+      "MultipleItemEntries": [],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 7,
+      "Cost": 10000000,
+      "EntityId": 532,
+      "MultipleItemEntries": [],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 457,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 11
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 476,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 11
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 495,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 11
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 514,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 11
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 458,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 7
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 477,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 7
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 496,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 7
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 515,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 7
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 9,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 459,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 3
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 478,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 3
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 497,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 3
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 516,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 3
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 460,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 18
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 479,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 18
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 498,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 18
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 517,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 18
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 9,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 930,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 20
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 931,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 20
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 932,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 20
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 933,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 20
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 461,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 15
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 480,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 15
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 499,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 15
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 518,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 15
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 462,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 10
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 481,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 10
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 500,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 10
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 519,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 10
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 463,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 14
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 482,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 14
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 501,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 14
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 520,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 14
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 9,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 464,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 6
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 483,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 6
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 502,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 6
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 521,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 6
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 990,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 21
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 991,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 21
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 992,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 21
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 993,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 21
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 9,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 465,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 5
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 484,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 5
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 503,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 5
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 522,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 5
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 466,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 12
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 485,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 12
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 504,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 12
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 523,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 12
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 467,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 17
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 486,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 17
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 505,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 17
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 524,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 17
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 9,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 468,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 1
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 487,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 1
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 506,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 1
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 525,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 1
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 469,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 13
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 488,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 13
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 507,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 13
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 526,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 13
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 9,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 470,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 2
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 489,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 2
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 508,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 2
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 527,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 2
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 8,
+      "Cost": 250000,
+      "MultipleItemEntries": [
+        {
+          "Amount": 1,
+          "Cost": 500000,
+          "ItemId": 471,
+          "SkillRequirements": [
+            {
+              "Level": 90,
+              "Skill": 8
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 1000000,
+          "ItemId": 490,
+          "SkillRequirements": [
+            {
+              "Level": 100,
+              "Skill": 8
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 2000000,
+          "ItemId": 509,
+          "SkillRequirements": [
+            {
+              "Level": 110,
+              "Skill": 8
+            }
+          ]
+        },
+        {
+          "Amount": 1,
+          "Cost": 5000000,
+          "ItemId": 528,
+          "SkillRequirements": [
+            {
+              "Level": 120,
+              "Skill": 8
+            }
+          ]
+        }
+      ],
+      "RewardType": 2,
+      "ShopType": 2
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_ancient_wisdom_description",
+      "EntityId": 28,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_master_crafter_description",
+      "EntityId": 29,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_arrow_crafter_description",
+      "EntityId": 43,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_auto_cook_desc",
+      "EntityId": 11,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_auto_cook_meat_combat_description",
+      "EntityId": 39,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_automatic_eating_desc",
+      "EntityId": 4,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_automatic_looting_desc",
+      "EntityId": 5,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_bank_space_desc",
+      "EntityId": 1,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_better_skinner_description",
+      "EntityId": 40,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_bloodmoon_exterminator_description",
+      "EntityId": 56,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_bloodmoon_fisherman_description",
+      "EntityId": 57,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_bloodmoon_helmet_upgrade_description",
+      "EntityId": 58,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_bloodmoon_preparation_description",
+      "EntityId": 55,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "boss_slayer_description",
+      "EntityId": 25,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "bounty_hunter_description",
+      "EntityId": 53,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_combat_dodge_desc",
+      "EntityId": 14,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_combat_quest_boost_desc",
+      "EntityId": 15,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_delicate_manufacturing_description",
+      "EntityId": 44,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_farming_desc",
+      "EntityId": 8,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_fishing_boost_desc",
+      "EntityId": 3,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_foraging_desc",
+      "EntityId": 9,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_getting_in_sync_desc",
+      "EntityId": 50,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_guild_quests_desc",
+      "EntityId": 7,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "",
+      "EntityId": 0,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_kronos_item_boost_description",
+      "EntityId": 47,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_kronos_protection_description",
+      "EntityId": 36,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_last_negotiation_description",
+      "EntityId": 46,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_lazy_raider_description",
+      "EntityId": 27,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_loadouts_description",
+      "EntityId": 34,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_offline_progression_desc",
+      "EntityId": 6,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 12,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_pet_here_fishy_fishy_desc",
+      "EntityId": 60,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 12,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_pet_how_to_train_your_demon_pet_desc",
+      "EntityId": 63,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 12,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_pet_theyre_not_rocks_theyre_minerals_desc",
+      "EntityId": 61,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 12,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_pet_whos_a_good_boy_desc",
+      "EntityId": 62,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_picky_eater_description",
+      "EntityId": 48,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_plank_cost_desc",
+      "EntityId": 12,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_prestigious_woodworking_desc",
+      "EntityId": 49,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_principles_of_combat_desc",
+      "EntityId": 64,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_responsible_drinking_description",
+      "EntityId": 45,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_save_ammo_desc",
+      "EntityId": 13,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_skilling_ticket_boost_desc",
+      "EntityId": 59,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_smelting_cost_desc",
+      "EntityId": 10,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 2,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_teamwork_desc",
+      "EntityId": 24,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 0,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "",
+      "EntityId": 26,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_upgraded_fisherman_description",
+      "EntityId": 41,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_upgraded_lumberjack_description",
+      "EntityId": 42,
+      "RewardType": 1,
+      "ShopType": 1
+    },
+    {
+      "CategoryType": 1,
+      "Cost": 0,
+      "DescriptionLocalizationKey": "upgrade_woodcutting_boost_desc",
+      "EntityId": 2,
+      "RewardType": 1,
+      "ShopType": 1
+    }
+  ],
+  "_id": "623f32fa73d166106ed46cb4"
+}

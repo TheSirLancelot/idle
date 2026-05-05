@@ -8,12 +8,11 @@ from idle_clans_tools.api import IdleClansClient
 from idle_clans_tools.ui.auth import render_login_page, render_user_info
 from idle_clans_tools.ui.pages import (
     render_clan_lookup,
-    render_leaderboards,
-    render_market,
+    render_game_data_browser,
     render_player_lookup,
 )
 
-PAGES = ["Player Lookup", "Clan Lookup", "Leaderboards", "Market"]
+PAGES = ["Player Lookup", "Clan Lookup", "Game Data Browser"]
 
 
 def main() -> None:
@@ -41,10 +40,8 @@ def main() -> None:
         render_player_lookup(client)
     elif selected_page == "Clan Lookup":
         render_clan_lookup(client)
-    elif selected_page == "Leaderboards":
-        render_leaderboards(client)
-    elif selected_page == "Market":
-        render_market(client)
+    elif selected_page == "Game Data Browser":
+        render_game_data_browser(client)
 
 
 if __name__ == "__main__":

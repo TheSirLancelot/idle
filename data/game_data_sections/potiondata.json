@@ -1,0 +1,82 @@
+{
+  "Items": [
+    {
+      "ChanceOfTriggeringEffect": 0,
+      "Duration": 601,
+      "EffectStrengthPercentage": 10,
+      "PotionId": 0,
+      "PotionType": 1
+    },
+    {
+      "ChanceOfTriggeringEffect": 0,
+      "Duration": 300,
+      "EffectStrengthPercentage": 5,
+      "PotionId": 1,
+      "PotionType": 2
+    },
+    {
+      "ChanceOfTriggeringEffect": 0,
+      "Duration": 600,
+      "EffectStrengthPercentage": 40,
+      "PotionId": 2,
+      "PotionType": 3
+    },
+    {
+      "ChanceOfTriggeringEffect": 10,
+      "Duration": 180,
+      "EffectStrengthPercentage": 0,
+      "PotionId": 3,
+      "PotionType": 4
+    },
+    {
+      "ChanceOfTriggeringEffect": 0,
+      "Duration": 600,
+      "EffectStrengthPercentage": 10,
+      "PotionId": 4,
+      "PotionType": 5
+    },
+    {
+      "ChanceOfTriggeringEffect": 15,
+      "Duration": 900,
+      "EffectStrengthPercentage": 0,
+      "PotionId": 5,
+      "PotionType": 6
+    },
+    {
+      "ChanceOfTriggeringEffect": 25,
+      "Duration": 600,
+      "EffectStrengthPercentage": 105,
+      "PotionId": 6,
+      "PotionType": 7
+    },
+    {
+      "ChanceOfTriggeringEffect": 0,
+      "Duration": 600,
+      "EffectStrengthPercentage": 20,
+      "PotionId": 7,
+      "PotionType": 8
+    },
+    {
+      "ChanceOfTriggeringEffect": 0,
+      "Duration": 600,
+      "EffectStrengthPercentage": 50,
+      "PotionId": 8,
+      "PotionType": 9
+    },
+    {
+      "ChanceOfTriggeringEffect": 100,
+      "Duration": 60,
+      "EffectStrengthPercentage": 75,
+      "PotionId": 9,
+      "PotionType": 10
+    },
+    {
+      "ChanceOfTriggeringEffect": 100,
+      "Duration": 600,
+      "EffectStrengthPercentage": 15,
+      "PotionId": 10,
+      "PotionType": 11
+    }
+  ],
+  "_id": "63636307dc1854b598540a55"
+}
