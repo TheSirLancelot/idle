@@ -12,6 +12,57 @@ import json
 from dataclasses import dataclass, field
 from typing import Any
 
+# ---------------------------------------------------------------------------
+# Activity models
+# ---------------------------------------------------------------------------
+
+
+#: Maps the integer ``taskType`` field from the activities endpoint to a
+#: human-readable skill label.  Values derived empirically from live API data.
+_TASK_TYPE_LABELS: dict[int, str] = {
+    1: "Woodcutting",
+    2: "Fishing",
+    3: "Mining",
+    4: "Carpentry",
+    6: "Smithing",
+    7: "Combat",
+    8: "Cooking",
+    9: "Foraging",
+    13: "Plundering",
+    18: "Invocation",
+}
+
+
+@dataclass
+class PlayerActivity:
+    """Current (or most recent) activity for a single player."""
+
+    activity_type: int
+    task_type: int
+    activity_identifier_id: int
+    start_time: str | None
+
+    @property
+    def skill_label(self) -> str:
+        """Human-readable label for the activity, derived from activity and task type."""
+        if self.activity_type == 0:
+            return "Offline"
+        if self.task_type == 0:
+            return "In Clan Event"
+        label = _TASK_TYPE_LABELS.get(self.task_type)
+        if label:
+            return label
+        return f"Activity {self.task_type}"
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> PlayerActivity:
+        return cls(
+            activity_type=int(data.get("type", 0) or 0),
+            task_type=int(data.get("taskType", 0) or 0),
+            activity_identifier_id=int(data.get("activityIdentifierId", 0) or 0),
+            start_time=data.get("startTime"),
+        )
+
 
 def _optional_bool(value: Any) -> bool | None:
     if isinstance(value, bool):
