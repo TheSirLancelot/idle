@@ -40,11 +40,19 @@ def _max_total_level(skills: dict[str, int]) -> int:
 def render_player_lookup(client: IdleClansClient) -> None:
     st.header("Player Lookup")
 
+    pending_username = st.session_state.pop("pending_player_lookup_username", None)
+    if pending_username:
+        st.session_state.player_lookup_username = pending_username
+
     with st.form("player-lookup-form"):
-        username = st.text_input("Username", placeholder="Enter an Idle Clans username")
+        username = st.text_input(
+            "Username",
+            key="player_lookup_username",
+            placeholder="Enter an Idle Clans username",
+        )
         submitted = st.form_submit_button("Look Up Player", type="primary")
 
-    if not submitted:
+    if not submitted and not pending_username:
         return
 
     username = username.strip()

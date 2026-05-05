@@ -8,6 +8,7 @@ are ignored so the models stay forward-compatible.
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -118,20 +119,42 @@ class ClanInfo:
     language: str | None = None
     category: str | None = None
     tag: str | None = None
+    activity_score: float | None = None
+    upgrade_ids: list[int] = field(default_factory=list)
+    repeatable_upgrade_counts: dict[str, int] = field(default_factory=dict)
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> ClanInfo:
         description = data.get("description") or data.get("recruitmentMessage")
+        member_count = data.get("memberCount") or len(data.get("memberlist") or [])
+        total_experience = data.get("totalExperience")
+
+        raw_upgrades = data.get("serializedUpgrades") or []
+        if isinstance(raw_upgrades, str):
+            try:
+                raw_upgrades = json.loads(raw_upgrades)
+            except (json.JSONDecodeError, ValueError):
+                raw_upgrades = []
+        upgrade_ids = [int(v) for v in raw_upgrades if isinstance(v, (int, float))]
+
+        raw_repeatable = data.get("repeatableUpgradeCounts") or {}
+        repeatable_upgrade_counts = {
+            str(k): int(v) for k, v in raw_repeatable.items() if isinstance(v, (int, float))
+        }
+
         return cls(
             name=data.get("name") or data.get("clanName", ""),
-            leader=data.get("leader", ""),
-            member_count=data.get("memberCount", 0),
-            total_experience=data.get("totalExperience", 0),
+            leader=data.get("leader") or "",
+            member_count=int(member_count or 0),
+            total_experience=int(total_experience or 0),
             description=description,
             is_recruiting=data.get("isRecruiting"),
             language=data.get("language"),
             category=data.get("category"),
             tag=data.get("tag"),
+            activity_score=data.get("activityScore"),
+            upgrade_ids=upgrade_ids,
+            repeatable_upgrade_counts=repeatable_upgrade_counts,
         )
 
 
@@ -152,6 +175,96 @@ class ClanMember:
             username=data.get("username") or data.get("memberName", ""),
             rank=str(rank or ""),
             total_experience=int(data.get("totalExperience", 0) or 0),
+        )
+
+
+@dataclass
+class SkillExperienceSnapshot:
+    """A skill's experience and level snapshot within a clan summary."""
+
+    experience: float
+    level: int
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> SkillExperienceSnapshot:
+        experience = data.get("experience")
+        if not isinstance(experience, (int, float)):
+            experience = 0
+
+        return cls(
+            experience=float(experience),
+            level=int(data.get("level", 0) or 0),
+        )
+
+
+@dataclass
+class ClanPlayerContribution:
+    """A player's contribution inside a clan experience summary."""
+
+    username: str
+    total_experience: float
+    skills: dict[str, SkillExperienceSnapshot] = field(default_factory=dict)
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> ClanPlayerContribution:
+        _SKILL_NAME_ALIASES = {"Rigour": "Attack"}
+        raw_skills = data.get("skills") or {}
+        skills = {
+            _SKILL_NAME_ALIASES.get(str(name), str(name)): SkillExperienceSnapshot.from_dict(value)
+            for name, value in raw_skills.items()
+            if isinstance(value, dict)
+        }
+
+        total_experience = data.get("totalExperience")
+        if not isinstance(total_experience, (int, float)):
+            total_experience = sum(skill.experience for skill in skills.values())
+
+        return cls(
+            username=str(data.get("username") or ""),
+            total_experience=float(total_experience),
+            skills=skills,
+        )
+
+
+@dataclass
+class ClanExperienceSummary:
+    """Experience totals and per-player contributions for a clan."""
+
+    clan_name: str
+    period_hours: int
+    total_experience: float
+    skill_totals: dict[str, float] = field(default_factory=dict)
+    player_contributions: list[ClanPlayerContribution] = field(default_factory=list)
+    interval_count: int = 0
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> ClanExperienceSummary:
+        _SKILL_NAME_ALIASES = {"Rigour": "Attack"}
+        raw_skill_totals = data.get("skillTotals") or {}
+        skill_totals = {
+            _SKILL_NAME_ALIASES.get(str(name), str(name)): float(value)
+            for name, value in raw_skill_totals.items()
+            if isinstance(value, (int, float))
+        }
+
+        raw_player_contributions = data.get("playerContributions") or []
+        player_contributions = [
+            ClanPlayerContribution.from_dict(entry)
+            for entry in raw_player_contributions
+            if isinstance(entry, dict)
+        ]
+
+        total_experience = data.get("totalExperience")
+        if not isinstance(total_experience, (int, float)):
+            total_experience = sum(skill_totals.values())
+
+        return cls(
+            clan_name=str(data.get("clanName") or ""),
+            period_hours=int(data.get("periodHours", 0) or 0),
+            total_experience=float(total_experience),
+            skill_totals=skill_totals,
+            player_contributions=player_contributions,
+            interval_count=int(data.get("intervalCount", 0) or 0),
         )
 
 
@@ -187,6 +300,37 @@ class LeaderboardEntry:
             rank=data.get("rank", 0),
             username=str(username),
             value=int(value),
+        )
+
+
+# ---------------------------------------------------------------------------
+# Clan Cup models
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class ClanCupStanding:
+    """A clan's standing in a single Clan Cup objective category."""
+
+    objective: str
+    rank: int
+    score: int | None = None
+    best_time: int | None = None
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> ClanCupStanding:
+        best_time_info = data.get("bestTime")
+        best_time: int | None = None
+        if isinstance(best_time_info, dict):
+            best_time = _optional_int(best_time_info.get("time"))
+
+        score = _optional_int(data.get("score"))
+
+        return cls(
+            objective=data.get("objective", ""),
+            rank=int(data.get("rank", 0) or 0),
+            score=score,
+            best_time=best_time,
         )
 
 

@@ -28,6 +28,8 @@ from requests.exceptions import RequestException, Timeout
 
 from .exceptions import IdleClansAPIError, NetworkError, NotFoundError, RateLimitError
 from .models import (
+    ClanCupStanding,
+    ClanExperienceSummary,
     ClanInfo,
     ClanMember,
     GameItem,
@@ -64,6 +66,7 @@ class IdleClansClient:
         self._session = session or requests.Session()
         self._session.headers.update({"Accept": "application/json"})
         self._item_lookup_cache: dict[int, GameItem] | None = None
+        self._clan_upgrade_lookup_cache: dict[int, str] | None = None
 
     # ------------------------------------------------------------------
     # Internal helpers
@@ -208,6 +211,51 @@ class IdleClansClient:
         data = data.get("memberlist", [])
         return [ClanMember.from_dict(entry) for entry in data]
 
+    def get_clan_cup_standings(
+        self,
+        clan_name: str,
+        game_mode: str = "Default",
+        previous_cup: bool = False,
+    ) -> list[ClanCupStanding]:
+        """Fetch a clan's standings for all Clan Cup objectives.
+
+        Args:
+            clan_name: The exact clan name as it appears in-game.
+            game_mode: Game mode to retrieve standings for (e.g. ``"Default"``,
+                ``"Ironman"``). Defaults to ``"Default"``.
+            previous_cup: If ``True``, return standings for the previous cup.
+
+        Returns:
+            A list of :class:`~idle_clans_tools.api.models.ClanCupStanding`
+            objects, one per objective category.
+        """
+        safe_clan_name = quote(clan_name, safe="")
+        params: dict[str, Any] = {"gameMode": game_mode, "previousCup": previous_cup}
+        data = self._get(f"/api/ClanCup/standings/{safe_clan_name}", params=params)
+        if not isinstance(data, list):
+            return []
+        return [ClanCupStanding.from_dict(entry) for entry in data if isinstance(entry, dict)]
+
+    def get_clan_experience_summary(
+        self,
+        clan_name: str,
+        hours: int = 72,
+    ) -> ClanExperienceSummary:
+        """Fetch experience totals and player contributions for a clan.
+
+        Args:
+            clan_name: The exact clan name as it appears in-game.
+            hours: Number of hours to look back. Supported range is 1-168.
+
+        Returns:
+            A :class:`~idle_clans_tools.api.models.ClanExperienceSummary` instance.
+        """
+        safe_clan_name = quote(clan_name, safe="")
+        data = self._get(f"/api/Clan/{safe_clan_name}/experience", params={"hours": hours})
+        if not isinstance(data, dict):
+            data = {}
+        return ClanExperienceSummary.from_dict(data)
+
     # ------------------------------------------------------------------
     # Leaderboard endpoints
     # ------------------------------------------------------------------
@@ -306,3 +354,39 @@ class IdleClansClient:
         if self._item_lookup_cache is None:
             self._item_lookup_cache = {item.item_id: item for item in self.get_game_items()}
         return dict(self._item_lookup_cache)
+
+    def get_clan_upgrade_lookup(self) -> dict[int, str]:
+        """Fetch clan upgrade definitions keyed by upgrade type id.
+
+        Returns:
+            A dict mapping upgrade ``Type`` integer to a human-readable name.
+        """
+        if self._clan_upgrade_lookup_cache is not None:
+            return dict(self._clan_upgrade_lookup_cache)
+        data = self._get_game_data()
+        raw = data.get("ClanUpgrades", {})
+        if isinstance(raw, dict):
+            items = raw.get("Items", [])
+        elif isinstance(raw, list):
+            items = raw
+        else:
+            items = []
+        lookup: dict[int, str] = {}
+        for entry in items:
+            if not isinstance(entry, dict):
+                continue
+            type_id = entry.get("Type")
+            if not isinstance(type_id, int):
+                continue
+            loc_keys = entry.get("TierDescriptionLocKeys") or []
+            loc_key = loc_keys[0] if loc_keys else ""
+            name = (
+                loc_key.replace("clan_upgrade_", "")
+                .removesuffix("_description")
+                .removesuffix("_desc")
+                .replace("_", " ")
+                .title()
+            )
+            lookup[type_id] = name or f"Upgrade {type_id}"
+        self._clan_upgrade_lookup_cache = lookup
+        return dict(lookup)
