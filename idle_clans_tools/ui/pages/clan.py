@@ -98,7 +98,7 @@ def render_clan_lookup(client: IdleClansClient) -> None:
                     "Score / Time": score_display,
                 }
             )
-        st.dataframe(rows, hide_index=True, use_container_width=True)
+        st.dataframe(rows, hide_index=True, width='stretch')
     else:
         st.info("No Clan Cup standings found for this clan.")
 
@@ -157,7 +157,7 @@ def render_clan_lookup(client: IdleClansClient) -> None:
                 }
                 for row in contribution_rows
             ]
-            st.dataframe(formatted_rows, hide_index=True, use_container_width=True)
+            st.dataframe(formatted_rows, hide_index=True, width='stretch')
         else:
             st.info(f"No {skill} contributions were found in the selected time window.")
     else:
@@ -167,7 +167,7 @@ def render_clan_lookup(client: IdleClansClient) -> None:
         st.subheader("Members")
         if members:
             member_rows = [{"Rank": member.rank, "Username": member.username} for member in members]
-            st.dataframe(member_rows, hide_index=True, use_container_width=True)
+            st.dataframe(member_rows, hide_index=True, width='stretch')
             with st.expander("Open member in Player Lookup"):
                 cols = st.columns(4)
                 for index, member in enumerate(members):
@@ -176,7 +176,7 @@ def render_clan_lookup(client: IdleClansClient) -> None:
                         key=f"clan-member-{index}-{member.username}",
                         on_click=_open_player_lookup,
                         args=(member.username,),
-                        use_container_width=True,
+                        width='stretch',
                     )
         else:
             st.info("No members were returned for this clan.")
@@ -196,7 +196,7 @@ def render_clan_lookup(client: IdleClansClient) -> None:
                 .title()
             )
             upgrade_rows.append({"Upgrade": name, "Count": count})
-        st.dataframe(upgrade_rows, hide_index=True, use_container_width=True)
+        st.dataframe(upgrade_rows, hide_index=True, width='stretch')
     else:
         st.info("No upgrade data found for this clan.")
 

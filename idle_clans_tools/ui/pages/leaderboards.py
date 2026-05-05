@@ -53,7 +53,7 @@ def render_leaderboards(client: IdleClansClient) -> None:
         }
         for entry in entries
     ]
-    st.dataframe(entry_rows, hide_index=True, use_container_width=True)
+    st.dataframe(entry_rows, hide_index=True, width='stretch')
 
     with st.expander("Raw leaderboard data"):
         st.json([asdict(entry) for entry in entries])

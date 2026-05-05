@@ -5,6 +5,7 @@ from __future__ import annotations
 import streamlit as st
 
 from idle_clans_tools.api import IdleClansClient
+from idle_clans_tools.ui.auth import render_login_page, render_user_info
 from idle_clans_tools.ui.pages import (
     render_clan_lookup,
     render_leaderboards,
@@ -18,10 +19,14 @@ PAGES = ["Player Lookup", "Clan Lookup", "Leaderboards", "Market"]
 def main() -> None:
     st.set_page_config(page_title="clanlytics", page_icon="CL", layout="wide")
 
+    render_login_page()
+
     st.title("clanlytics")
     st.caption("Idle Clans public API explorer")
 
     client = IdleClansClient()
+
+    render_user_info()
 
     if pending_page := st.session_state.pop("pending_page", None):
         st.session_state.navigation_page = pending_page
