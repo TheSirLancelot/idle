@@ -45,7 +45,7 @@ def render_market(client: IdleClansClient) -> None:
         }
         for item in items
     ]
-    st.dataframe(item_rows, hide_index=True, use_container_width=True)
+    st.dataframe(item_rows, hide_index=True, width='stretch')
 
     with st.expander("Raw market data"):
         st.json([asdict(item) for item in items])

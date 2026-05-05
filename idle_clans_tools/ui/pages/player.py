@@ -108,7 +108,7 @@ def _render_player_profile(profile: PlayerProfile, item_lookup: dict[int, GameIt
         {"Field": "Logout Task Name", "Value": _format_optional(profile.task_name_on_logout)},
         {"Field": "Active Server ID", "Value": _format_optional(profile.active_server_id)},
     ]
-    st.dataframe(detail_rows, hide_index=True, use_container_width=True)
+    st.dataframe(detail_rows, hide_index=True, width='stretch')
 
     tabs = st.tabs(["Skills", "Equipment", "Enchantments", "Upgrades", "PvM Stats"])
     with tabs[0]:
@@ -153,7 +153,7 @@ def _render_mapping_table(
         {key_label: key, value_label: value}
         for key, value in sorted(values.items(), key=lambda item: item[0].casefold())
     ]
-    st.dataframe(rows, hide_index=True, use_container_width=True)
+    st.dataframe(rows, hide_index=True, width='stretch')
 
 
 def _render_skill_table(skills: dict[str, int]) -> None:
@@ -170,7 +170,7 @@ def _render_skill_table(skills: dict[str, int]) -> None:
         }
         for skill, xp in sorted(skills.items(), key=lambda item: item[0].casefold())
     ]
-    st.dataframe(rows, hide_index=True, use_container_width=True)
+    st.dataframe(rows, hide_index=True, width='stretch')
 
 
 def _render_equipment_table(equipment: dict[str, int], item_lookup: dict[int, GameItem]) -> None:
@@ -189,4 +189,4 @@ def _render_equipment_table(equipment: dict[str, int], item_lookup: dict[int, Ga
             item_name = item.display_name
         rows.append({"Slot": slot, "Item": item_name})
 
-    st.dataframe(rows, hide_index=True, use_container_width=True)
+    st.dataframe(rows, hide_index=True, width='stretch')
