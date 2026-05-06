@@ -27,6 +27,7 @@ from idle_clans_tools.api.models import (
     ClanInfo,
     ClanMember,
     GameItem,
+    HouseUpgrade,
     LeaderboardEntry,
     MarketItem,
     PlayerActivity,
@@ -168,6 +169,9 @@ class TestGetClanInfo:
             "language": "English",
             "category": "PvE",
             "recruitmentMessage": "We are brave.",
+            "skillLevels": {"8": 44, "10": 35},
+            "houseId": 4,
+            "clanCredits": 250,
         }
         get_mock = _session_get_mock(client)
         get_mock.return_value = _make_response(200, payload)
@@ -181,6 +185,14 @@ class TestGetClanInfo:
         assert info.is_recruiting is True
         assert info.language == "English"
         assert info.description == "We are brave."
+        assert info.skill_levels == {8: 44, 10: 35}
+        assert info.house_level == 5
+        assert info.clan_credits == 250
+
+    def test_parses_serialized_clan_skill_levels(self) -> None:
+        info = ClanInfo.from_dict({"serializedSkills": '{"Woodcutting": 75, "Mining": 151}'})
+
+        assert info.skill_levels == {8: 2, 12: 3}
 
     def test_encodes_clan_name_in_url(self, client: IdleClansClient) -> None:
         get_mock = _session_get_mock(client)
@@ -398,6 +410,58 @@ class TestGetGameItems:
 
         assert items[0].item_id == 845
         assert items[0].display_name == "Ghostly Hood"
+
+    def test_returns_house_upgrades(self, client: IdleClansClient) -> None:
+        payload = (
+            '{ "Houses": { "Items": [{'
+            '"Name": "guild_house_1",'
+            '"ClanCreditCost": 100,'
+            '"InventorySpace": 4,'
+            '"GlobalSkillingBoost": 5,'
+            '"Costs": [{"Item": 19, "Amount": 5000000}],'
+            '"SkillRequirements": [{"Skill": 8, "Level": 25}]'
+            "}] } }"
+        )
+        response = MagicMock(spec=requests.Response)
+        response.status_code = 200
+        response.ok = True
+        response.text = payload
+        get_mock = _session_get_mock(client)
+        get_mock.return_value = response
+
+        houses = client.get_house_upgrades()
+
+        assert len(houses) == 1
+        assert isinstance(houses[0], HouseUpgrade)
+        assert houses[0].level == 1
+        assert houses[0].display_name == "Tent"
+        assert houses[0].clan_credit_cost == 100
+        assert houses[0].costs[0].item_id == 19
+        assert houses[0].skill_requirements[0].skill_name == "Woodcutting"
+
+    def test_house_skill_requirement_uses_static_skill_ids(self) -> None:
+        house = HouseUpgrade.from_dict(
+            {
+                "SkillRequirements": [
+                    {"Skill": 9, "Level": 100},
+                    {"Skill": 10, "Level": 100},
+                    {"Skill": 12, "Level": 100},
+                    {"Skill": 13, "Level": 100},
+                    {"Skill": 14, "Level": 100},
+                    {"Skill": 19, "Level": 100},
+                ]
+            },
+            6,
+        )
+
+        assert [req.skill_name for req in house.skill_requirements] == [
+            "Carpentry",
+            "Fishing",
+            "Mining",
+            "Smithing",
+            "Foraging",
+            "Brewing",
+        ]
 
 
 class TestGameDataSections:

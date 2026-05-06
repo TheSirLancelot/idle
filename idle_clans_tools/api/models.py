@@ -12,6 +12,9 @@ import json
 from dataclasses import dataclass, field
 from typing import Any
 
+from idle_clans_tools.api.levels import level_for_experience
+from idle_clans_tools.api.skills import SKILL_ID_TO_NAME, SKILL_NAME_TO_ID
+
 # ---------------------------------------------------------------------------
 # Activity models
 # ---------------------------------------------------------------------------
@@ -138,6 +141,37 @@ def _numeric_map(value: Any) -> dict[str, int]:
     }
 
 
+def _skill_level_map(value: Any, *, values_are_experience: bool = False) -> dict[int, int]:
+    if not isinstance(value, dict):
+        return {}
+
+    result: dict[int, int] = {}
+    for name, raw_value in value.items():
+        if not isinstance(raw_value, (int, float)):
+            continue
+        try:
+            key = int(name)
+        except (TypeError, ValueError):
+            key = SKILL_NAME_TO_ID.get(str(name).casefold())
+        if key is not None:
+            result[key] = (
+                level_for_experience(raw_value) if values_are_experience else int(raw_value)
+            )
+    return result
+
+
+def _json_object(value: Any) -> dict[str, Any]:
+    if isinstance(value, dict):
+        return value
+    if not isinstance(value, str):
+        return {}
+    try:
+        data = json.loads(value)
+    except (json.JSONDecodeError, ValueError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
 def _optional_int(value: Any) -> int | None:
     if isinstance(value, (int, float)):
         return int(value)
@@ -173,6 +207,9 @@ class ClanInfo:
     activity_score: float | None = None
     upgrade_ids: list[int] = field(default_factory=list)
     repeatable_upgrade_counts: dict[str, int] = field(default_factory=dict)
+    skill_levels: dict[int, int] = field(default_factory=dict)
+    house_level: int | None = None
+    clan_credits: int | None = None
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> ClanInfo:
@@ -193,6 +230,27 @@ class ClanInfo:
             str(k): int(v) for k, v in raw_repeatable.items() if isinstance(v, (int, float))
         }
 
+        raw_skill_levels = data.get("skillLevels") or data.get("clanSkillLevels")
+        skill_levels = _skill_level_map(raw_skill_levels)
+        if not skill_levels:
+            raw_serialized_skill_levels = data.get("serializedSkillLevels")
+            skill_levels = _skill_level_map(
+                _json_object(raw_serialized_skill_levels) or raw_serialized_skill_levels
+            )
+        if not skill_levels:
+            raw_serialized_skills = data.get("serializedSkills") or data.get("skills")
+            skill_levels = _skill_level_map(
+                _json_object(raw_serialized_skills) or raw_serialized_skills,
+                values_are_experience=True,
+            )
+
+        raw_house_id = _optional_int(data.get("houseId"))
+        house_level = (
+            raw_house_id + 1
+            if raw_house_id is not None
+            else _optional_int(_get_first(data, "houseLevel", "guildHouseLevel", "guildHouse"))
+        )
+
         return cls(
             name=data.get("name") or data.get("clanName", ""),
             leader=data.get("leader") or "",
@@ -206,6 +264,9 @@ class ClanInfo:
             activity_score=data.get("activityScore"),
             upgrade_ids=upgrade_ids,
             repeatable_upgrade_counts=repeatable_upgrade_counts,
+            skill_levels=skill_levels,
+            house_level=house_level,
+            clan_credits=_optional_int(_get_first(data, "clanCredits", "credits")),
         )
 
 
@@ -382,6 +443,101 @@ class ClanCupStanding:
             rank=int(data.get("rank", 0) or 0),
             score=score,
             best_time=best_time,
+        )
+
+
+# ---------------------------------------------------------------------------
+# House models
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class HouseCost:
+    """An item quantity required for a clan house upgrade."""
+
+    item_id: int
+    amount: int
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> HouseCost:
+        return cls(
+            item_id=_optional_int(_get_first(data, "Item", "item")) or 0,
+            amount=_optional_int(_get_first(data, "Amount", "amount")) or 0,
+        )
+
+
+@dataclass
+class HouseSkillRequirement:
+    """A clan skill level requirement for a clan house upgrade."""
+
+    skill_id: int
+    level: int
+
+    @property
+    def skill_name(self) -> str:
+        return SKILL_ID_TO_NAME.get(self.skill_id, f"Skill {self.skill_id}")
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> HouseSkillRequirement:
+        return cls(
+            skill_id=_optional_int(_get_first(data, "Skill", "skill")) or 0,
+            level=_optional_int(_get_first(data, "Level", "level")) or 0,
+        )
+
+
+@dataclass
+class HouseUpgrade:
+    """Static metadata for one clan house tier."""
+
+    level: int
+    name: str
+    clan_credit_cost: int
+    inventory_space: int
+    global_skilling_boost: int
+    costs: list[HouseCost] = field(default_factory=list)
+    skill_requirements: list[HouseSkillRequirement] = field(default_factory=list)
+
+    @property
+    def display_name(self) -> str:
+        property_names = {
+            1: "Tent",
+            2: "Barn",
+            3: "Windmill",
+            4: "House",
+            5: "Manor",
+            6: "Castle",
+        }
+        if self.level in property_names:
+            return property_names[self.level]
+        return self.name.replace("_", " ").title()
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any], level: int) -> HouseUpgrade:
+        raw_costs = data.get("Costs") or data.get("costs") or []
+        raw_skill_requirements = (
+            data.get("SkillRequirements") or data.get("skillRequirements") or []
+        )
+        return cls(
+            level=level,
+            name=str(_get_first(data, "Name", "name") or f"guild_house_{level}"),
+            clan_credit_cost=_optional_int(
+                _get_first(data, "ClanCreditCost", "clanCreditCost")
+            )
+            or 0,
+            inventory_space=_optional_int(_get_first(data, "InventorySpace", "inventorySpace"))
+            or 0,
+            global_skilling_boost=_optional_int(
+                _get_first(data, "GlobalSkillingBoost", "globalSkillingBoost")
+            )
+            or 0,
+            costs=[
+                HouseCost.from_dict(entry) for entry in raw_costs if isinstance(entry, dict)
+            ],
+            skill_requirements=[
+                HouseSkillRequirement.from_dict(entry)
+                for entry in raw_skill_requirements
+                if isinstance(entry, dict)
+            ],
         )
 
 
