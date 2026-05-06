@@ -33,6 +33,7 @@ from .models import (
     ClanInfo,
     ClanMember,
     GameItem,
+    HouseUpgrade,
     LeaderboardEntry,
     MarketItem,
     PlayerActivity,
@@ -69,6 +70,7 @@ class IdleClansClient:
         self._game_data_cache: dict[str, Any] | None = None
         self._item_lookup_cache: dict[int, GameItem] | None = None
         self._clan_upgrade_lookup_cache: dict[int, str] | None = None
+        self._house_upgrades_cache: list[HouseUpgrade] | None = None
 
     # ------------------------------------------------------------------
     # Internal helpers
@@ -486,3 +488,24 @@ class IdleClansClient:
             lookup[type_id] = name or f"Upgrade {type_id}"
         self._clan_upgrade_lookup_cache = lookup
         return dict(lookup)
+
+    def get_house_upgrades(self) -> list[HouseUpgrade]:
+        """Fetch static clan house upgrade definitions sorted by house tier."""
+        if self._house_upgrades_cache is not None:
+            return list(self._house_upgrades_cache)
+
+        data = self._get_game_data()
+        raw = data.get("Houses", {})
+        if isinstance(raw, dict):
+            items = raw.get("Items", [])
+        elif isinstance(raw, list):
+            items = raw
+        else:
+            items = []
+
+        self._house_upgrades_cache = [
+            HouseUpgrade.from_dict(entry, index)
+            for index, entry in enumerate(items, start=1)
+            if isinstance(entry, dict)
+        ]
+        return list(self._house_upgrades_cache)

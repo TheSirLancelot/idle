@@ -10,7 +10,11 @@ import streamlit as st
 
 from idle_clans_tools.api import IdleClansClient
 from idle_clans_tools.api.exceptions import IdleClansAPIError
-from idle_clans_tools.api.models import PlayerActivity
+from idle_clans_tools.api.models import (
+    GameItem,
+    HouseUpgrade,
+    PlayerActivity,
+)
 from idle_clans_tools.ui.errors import render_api_error
 from idle_clans_tools.ui.formatting import format_bool, format_number
 
@@ -37,6 +41,31 @@ def _humanize_task_name(value: str) -> str:
     if not cleaned:
         return "—"
     return cleaned.title()
+
+
+def _infer_house_level(info_skill_levels: dict[int, int], houses: list[HouseUpgrade]) -> int:
+    current_level = 0
+    for house in houses:
+        if all(
+            info_skill_levels.get(requirement.skill_id, 0) >= requirement.level
+            for requirement in house.skill_requirements
+        ):
+            current_level = house.level
+    return current_level
+
+
+def _next_house(
+    info_skill_levels: dict[int, int], houses: list[HouseUpgrade]
+) -> HouseUpgrade | None:
+    if not houses:
+        return None
+    current_level = _infer_house_level(info_skill_levels, houses)
+    return next((house for house in houses if house.level == current_level + 1), None)
+
+
+def _format_item_cost(cost_item_id: int, item_lookup: dict[int, GameItem]) -> str:
+    item = item_lookup.get(cost_item_id)
+    return item.display_name if item is not None else f"Item {cost_item_id}"
 
 
 def _cache_key(prefix: str, name: str) -> str:
@@ -123,6 +152,95 @@ def render_clan_lookup(client: IdleClansClient) -> None:
     for label, value in detail_rows:
         if value:
             st.write(f"**{label}:** {value}")
+
+    if _toggle_section(section_prefix, "house", "House Upgrade", cache_keys=["houses", "items"]):
+        st.subheader("House Upgrade")
+        with st.spinner("Fetching house upgrade metadata..."):
+            try:
+                house_upgrades = _get_cached_value(
+                    _cache_key(section_prefix, "houses"),
+                    client.get_house_upgrades,
+                )
+                item_lookup = _get_cached_value(
+                    _cache_key(section_prefix, "items"),
+                    client.get_item_lookup,
+                )
+            except IdleClansAPIError as exc:
+                render_api_error(exc)
+                house_upgrades = []
+                item_lookup = {}
+
+        if not house_upgrades:
+            st.info("No house upgrade metadata was returned.")
+        elif not info.skill_levels:
+            st.info(
+                "No clan skill levels were found in the clan payload, "
+                "so house gaps cannot be calculated."
+            )
+        else:
+            current_house_level = info.house_level or _infer_house_level(
+                info.skill_levels, house_upgrades
+            )
+            next_house = next(
+                (house for house in house_upgrades if house.level == current_house_level + 1),
+                _next_house(info.skill_levels, house_upgrades),
+            )
+
+            current_house = next(
+                (house for house in house_upgrades if house.level == current_house_level),
+                None,
+            )
+
+            metric_columns = st.columns(2)
+            metric_columns[0].metric(
+                "Current Property",
+                current_house.display_name if current_house is not None else "Unknown",
+            )
+            metric_columns[1].metric(
+                "Next Property",
+                next_house.display_name if next_house is not None else "Maxed",
+            )
+
+            if next_house is None:
+                st.success("This clan meets the known skill requirements for the highest house.")
+            else:
+                st.write(
+                    f"**{next_house.display_name}:** "
+                    f"{next_house.global_skilling_boost}% global skilling boost, "
+                    f"{next_house.inventory_space} inventory spaces"
+                )
+                requirement_rows = []
+                for requirement in sorted(
+                    next_house.skill_requirements,
+                    key=lambda req: req.skill_name,
+                ):
+                    current_level = info.skill_levels.get(requirement.skill_id, 0)
+                    missing = max(0, requirement.level - current_level)
+                    requirement_rows.append(
+                        {
+                            "Skill": requirement.skill_name,
+                            "Current": current_level,
+                            "Required": requirement.level,
+                            "Missing": missing,
+                        }
+                    )
+                st.dataframe(requirement_rows, hide_index=True, width="stretch")
+
+                cost_rows = [
+                    {
+                        "Cost": _format_item_cost(cost.item_id, item_lookup),
+                        "Amount": format_number(cost.amount),
+                    }
+                    for cost in next_house.costs
+                ]
+                cost_rows.insert(
+                    0,
+                    {
+                        "Cost": "Clan Credits",
+                        "Amount": format_number(next_house.clan_credit_cost),
+                    },
+                )
+                st.dataframe(cost_rows, hide_index=True, width="stretch")
 
     if _toggle_section(section_prefix, "cup", "Clan Cup Standings", cache_keys=["cup_standings"]):
         st.subheader("Clan Cup Standings")
