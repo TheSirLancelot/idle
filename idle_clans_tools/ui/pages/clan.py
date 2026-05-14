@@ -9,7 +9,7 @@ from typing import TypeVar, cast
 import streamlit as st
 
 from idle_clans_tools.api import IdleClansClient
-from idle_clans_tools.api.exceptions import IdleClansAPIError
+from idle_clans_tools.api.exceptions import IdleClansAPIError, NotFoundError
 from idle_clans_tools.api.models import (
     GameItem,
     HouseUpgrade,
@@ -28,6 +28,30 @@ def _open_player_lookup(username: str) -> None:
 
 def _format_experience(value: float) -> str:
     return f"{value:,.0f}"
+
+
+def _fetch_giveaway_profiles(
+    client: IdleClansClient,
+    usernames: list[str],
+    cache_prefix: str,
+) -> dict[str, dict[str, int]]:
+    """Fetch skill XP maps for each username, using session-state caching."""
+    result: dict[str, dict[str, int]] = {}
+    for username in usernames:
+        cache_key = f"{cache_prefix}::giveaway_profile::{username}"
+        if cache_key not in st.session_state:
+            try:
+                profile = client.get_player_profile(username)
+                # Normalize keys to casefold so lookups are case-insensitive.
+                st.session_state[cache_key] = {
+                    k.casefold(): v for k, v in profile.skills.items()
+                }
+            except (IdleClansAPIError, NotFoundError):
+                st.session_state[cache_key] = {}
+        skills = st.session_state[cache_key]
+        if skills:
+            result[username] = skills
+    return result
 
 
 def _format_milliseconds_as_minutes_seconds(value: int) -> str:
@@ -283,7 +307,7 @@ def render_clan_lookup(client: IdleClansClient) -> None:
             "Contribution Window",
             options=[24, 48, 72, 96, 120, 168],
             index=3,
-            format_func=lambda value: f"Last {value} hours",
+            format_func=lambda h: f"Last {h} hours ({h // 24} day{'s' if h // 24 != 1 else ''})",
             key=f"{section_prefix}::contribution_hours",
         )
         with st.spinner("Fetching clan contribution data..."):
@@ -346,6 +370,127 @@ def render_clan_lookup(client: IdleClansClient) -> None:
                     st.dataframe(formatted_rows, hide_index=True, width="stretch")
                 else:
                     st.info(f"No {skill} contributions were found in the selected time window.")
+            else:
+                st.info("No clan contribution data was returned for the selected time window.")
+
+    if _toggle_section(
+        section_prefix,
+        "giveaway",
+        "Skill Giveaway",
+        cache_keys=["experience_summary"],
+    ):
+        st.subheader("Skill Giveaway")
+        st.caption(
+            "Ranks members by the % increase in a chosen skill's XP over a time window. "
+            "Useful for running a fair giveaway that rewards relative effort."
+        )
+        giveaway_hours = st.selectbox(
+            "Giveaway Window",
+            options=[24, 48, 72, 96, 120, 168],
+            index=2,
+            format_func=lambda h: f"Last {h} hours ({h // 24} day{'s' if h // 24 != 1 else ''})",
+            key=f"{section_prefix}::giveaway_hours",
+        )
+        with st.spinner("Fetching clan contribution data..."):
+            try:
+                giveaway_summary = _get_cached_value(
+                    _cache_key(section_prefix, f"experience_summary::{giveaway_hours}"),
+                    lambda: client.get_clan_experience_summary(
+                        active_clan_name, hours=giveaway_hours
+                    ),
+                )
+            except IdleClansAPIError as exc:
+                render_api_error(exc)
+                giveaway_summary = None
+
+        if giveaway_summary is not None:
+            available_giveaway_skills = sorted(giveaway_summary.skill_totals, key=str.casefold)
+            if available_giveaway_skills and giveaway_summary.player_contributions:
+                default_giveaway_skill = (
+                    "Woodcutting"
+                    if "Woodcutting" in available_giveaway_skills
+                    else available_giveaway_skills[0]
+                )
+                giveaway_skill = st.selectbox(
+                    "Skill",
+                    options=available_giveaway_skills,
+                    index=available_giveaway_skills.index(default_giveaway_skill),
+                    key=f"{section_prefix}::giveaway_skill",
+                )
+
+                candidates = [
+                    (player.username, player.skills[giveaway_skill].experience)
+                    for player in giveaway_summary.player_contributions
+                    if giveaway_skill in player.skills
+                    and player.skills[giveaway_skill].experience > 0
+                ]
+
+                if candidates:
+                    with st.spinner(
+                        f"Fetching player profiles to calculate % XP increase "
+                        f"({len(candidates)} players)..."
+                    ):
+                        profile_skills = _fetch_giveaway_profiles(
+                            client,
+                            [username for username, _ in candidates],
+                            section_prefix,
+                        )
+
+                    giveaway_rows = []
+                    for username, gained_xp in candidates:
+                        player_skills = profile_skills.get(username)
+                        if not player_skills:
+                            continue
+                        current_xp = float(player_skills.get(giveaway_skill.casefold(), 0))
+                        start_xp = current_xp - gained_xp
+                        if start_xp <= 0:
+                            pct = 100.0
+                        else:
+                            pct = (gained_xp / start_xp) * 100.0
+                        giveaway_rows.append(
+                            {
+                                "Username": username,
+                                "Start XP": start_xp,
+                                "End XP": current_xp,
+                                "Gained XP": gained_xp,
+                                "% Increase": pct,
+                            }
+                        )
+
+                    giveaway_rows.sort(key=lambda row: row["% Increase"], reverse=True)
+
+                    if giveaway_rows:
+                        winner = giveaway_rows[0]
+                        st.success(
+                            f"🏆 **Winner: {winner['Username']}** — "
+                            f"gained {_format_experience(winner['Gained XP'])} {giveaway_skill} XP "
+                            f"({winner['% Increase']:.1f}% increase)"
+                        )
+
+                        display_rows = [
+                            {
+                                "Rank": index + 1,
+                                "Username": row["Username"],
+                                f"Start {giveaway_skill} XP": _format_experience(
+                                    row["Start XP"]
+                                ),
+                                f"End {giveaway_skill} XP": _format_experience(row["End XP"]),
+                                f"Gained {giveaway_skill} XP": _format_experience(
+                                    row["Gained XP"]
+                                ),
+                                "% Increase": f"{row['% Increase']:.1f}%",
+                            }
+                            for index, row in enumerate(giveaway_rows)
+                        ]
+                        st.dataframe(display_rows, hide_index=True, width="stretch")
+                    else:
+                        st.info(
+                            "Could not retrieve profiles for any qualifying players."
+                        )
+                else:
+                    st.info(
+                        f"No {giveaway_skill} XP gains were recorded in the selected window."
+                    )
             else:
                 st.info("No clan contribution data was returned for the selected time window.")
 
